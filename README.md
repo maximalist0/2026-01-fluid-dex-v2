@@ -62,10 +62,10 @@ The rebalance function may fail under specific conditions if one of the amounts 
 In the Money Market contracts, during liquidation, there are cases where a portion of the amount intended to be received by the liquidator may be skipped if it is small. This is a deliberate rounding decision.
 
 6. Unsupported token decimals in Dex contracts
-Tokens with 15, 16, or 17 decimals are intentionally not supported in the Dex contracts
+Tokens with 15, 16, or 17 decimals are intentionally not supported in the Dex contracts.
 
 7. Protocol fee and interest revenue accounting in Dex contracts
-The Dex contracts do not currently account for, or provide an on chain mechanism to collect, accrued protocol fees. This is a deliberate design choice made to reduce the gas cost of swaps. Additionally, in certain cases, eg interest accrued on LP fees that have not yet been collected, or interest on stored balances held by the DEX, is revenue to the protocol. This interest revenue is also not explicitly accounted for on-chain. Both protocol fees and interest related revenues can be calculated retrospectively using historical on-chain data and off-chain accounting mechanisms if required.
+The Dex contracts do not currently account for, or provide an on chain mechanism to collect, accrued protocol fees. This is a deliberate design choice made to reduce the gas cost of swaps. Additionally, in certain cases, eg interest accrued on LP fees that have not yet been collected, or interest on stored balances held by the DEX, is revenue to the protocol. This interest revenue is also not explicitly accounted for on-chain. Both protocol fees and interest related revenues can be calculated retrospectively using historical on-chain data and off-chain accounting mechanisms when required.
 
 8. Conservative rounding in favor of the protocol
 There are multiple places in the codebase where explicit rounding is applied to consistently keep the protocol on the conservative (winning) side. This may result in users paying slightly more or receiving slightly fewer tokens in certain operations, with these residual amounts effectively remaining within the protocol. The amounts involved are minimal and non-material, making this an acceptable design choice.
@@ -73,10 +73,11 @@ There are multiple places in the codebase where explicit rounding is applied to 
 9. Reduced precision storage of sqrtPriceX96
 The sqrtPriceX96 value is stored using the BigMath library, with only the most significant 64 bits retained. This can result in the actual price being slightly above a tick but rounded down to just below it. To account for this, additional checks have been introduced during swaps, which may lead to minor rounding in favor of the user in this specific path. However, due to the protocol’s overall explicit and conservative rounding strategy, the protocol remains net profitable.
 
-10. Reduced-precision storage of global fee growth
+10. Reduced precision storage of global fee growth
 The global fee growth variables are stored using the BigMath library, retaining only the most significant 74 bits. In extreme edge cases where this value becomes very large, incremental swap fees may not affect these most significant bits, potentially resulting in LPs missing the accrued swap fees. This scenario is highly unlikely and considered acceptable.
 
-11. Conservative fee updates during tick crossingDuring swaps, when a tick is crossed, the associated tick fee variables are updated conservatively to account for the fact that global fee variables are rounded down when stored. This approach prioritizes protocol safety but may result in LPs earning slightly lower fees under certain conditions.
+11. Conservative fee updates during tick crossing
+During swaps, when a tick is crossed, the associated tick fee variables are updated conservatively to account for the fact that global fee variables are rounded down when stored. This approach prioritizes protocol safety but may result in LPs earning slightly lower fees under certain conditions.
 
 12. User favorable rounding in isolated code paths
 There are isolated instances in the codebase where rounding may be skipped or applied in favor of the user within specific code paths. Despite this, the protocol’s overall explicit and conservative rounding approach ensures that it remains net profitable.
@@ -87,6 +88,11 @@ Due to the use of BigMath, there are parts of the codebase where precision loss 
 14. Interest accrual assumptions during DEX rebalancing
 Some interest earning tokens may remain in the DEX if rebalancing is not performed frequently. In such cases, these tokens may temporarily not earn interest, even though the accounting and mathematical models assume that they do. The protocol assumes that rebalancing will be performed frequently enough such that only a small portion of tokens remain unproductive at any given time. Any resulting shortfall in interest is expected and will be borne by the protocol through off-chain accounting and operational mechanisms.
 
+15. Auths or Governance configuration changes
+Authorized roles can update protocol parameters in ways that may cause existing positions to become liquidatable, restrict certain operations, or positions can become invalid in general. These authorized actors are assumed to be trusted and are expected to manage such changes responsibly, with appropriate consideration for their impact on existing positions.
+
+16. Precision loss in BigMath accounting
+The BigMath library is used for storing some amounts and it can result in precision loss. These precision losses are considered acceptable, and all rounding has been intentionally designed to ensure the protocol remains on the conservative (winning) side.
 ___
 
 ### Q: Please provide links to previous audits (if any) and all the known issues or acceptable risks.
@@ -99,7 +105,10 @@ The Money Market contracts currently do not include any mechanism to absorb bad 
 3. No bad debt socialization mechanism
 The Money Market contracts also do not include any functionality to socialize bad debt across users or the protocol.
 
-4. Small amount liquidation edge cases
+4. Inability to Close Undercollateralized Positions
+The Money Market contracts also do not include any functionality to close undercollateralized positions.
+
+5. Small amount liquidation edge cases
 In certain edge cases, if the withdrawal amount or the payback amount during liquidations is very small, the operation may fail due to the protocol’s security checks. The team is aware that this behavior can, in rare situations, result in residual bad debt.
 ___
 
