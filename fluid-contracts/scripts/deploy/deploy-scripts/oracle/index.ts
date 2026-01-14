@@ -1,0 +1,10 @@
+export { deployOracleFallbackCLRSOracle } from "./deploy-oracle-fallbackCLRSOracle";
+export { deployOracleUniV3CheckCLRSOracle } from "./deploy-oracle-uniV3CheckCLRSOracle";
+export { deployOracle } from "./deploy-oracle";
+export { deployOraclePegOracle } from "./deploy-oracle-pegOracle";
+export { deployOracleStaticOracle } from "./deploy-oracle-staticOracle";
+export { deployDexSmartT4CLOracle } from "./deploy-oracle-dexSmartT4CLOracle";
+export { deployDexSmartT4PegOracle } from "./deploy-oracle-dexSmartT4PegOracle";
+export { deployDexSmartColPegOracle } from "./deploy-oracle-dexSmartColPegOracle";
+export { deployOracleGenericOracle } from "./deploy-oracle-genericOracle";
+export { deployOracleGenericUniV3CheckedOracle } from "./deploy-oracle-genericUniV3CheckedOracle";

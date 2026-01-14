@@ -1,0 +1,1894 @@
+Compiling 12 files with 0.8.21
+Solc 0.8.21 finished in 26.94s
+Compiler run [33msuccessful with warnings:[0m
+[1;33mWarning (6321)[0m[1;37m: Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.[0m
+  [34m-->[0m test/foundry/lending/mocks/userModuleMock.sol:35:25:
+[34m   |[0m
+[34m35 |[0m     ) internal returns ([33muint256[0m /* temp3_ */, uint256 /* temp4_ */) {
+[34m   |[0m                         [1;33m^^^^^^^[0m
+
+[1;33mWarning (6321)[0m[1;37m: Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.[0m
+  [34m-->[0m test/foundry/lending/mocks/userModuleMock.sol:35:47:
+[34m   |[0m
+[34m35 |[0m     ) internal returns (uint256 /* temp3_ */, [33muint256[0m /* temp4_ */) {
+[34m   |[0m                                               [1;33m^^^^^^^[0m
+
+
+Running 25 tests for test/foundry/lending/lendingRewardsRateModel.t.sol:LendingRewardsRateModelTest
+[32m[PASS][0m test_Constructor_RevertIfDecimalsEqualsZero() (gas: 43964)
+[32m[PASS][0m test_Constructor_RevertIfEndTimeEqualsZero() (gas: 48870)
+[32m[PASS][0m test_Constructor_RevertIfExceedMaxRate() (gas: 49197)
+[32m[PASS][0m test_Constructor_RevertIfKink1IsGreaterThanKink2() (gas: 48848)
+[32m[PASS][0m test_Constructor_RevertIfKink2IsGreaterThanKink3() (gas: 48881)
+[32m[PASS][0m test_Constructor_RevertIfKink3IsGreaterThanRateZeroAtTVL() (gas: 48912)
+[32m[PASS][0m test_Constructor_RevertIfRateAtTVLKink1IsSmallerThanRateAtTVLKink2() (gas: 49142)
+[32m[PASS][0m test_Constructor_RevertIfRateAtTVLKink2IsSmallerThanRateAtTVLKink3() (gas: 49192)
+[32m[PASS][0m test_Constructor_RevertIfRateAtTVLZeroIsSmallerThanRateAtTVLKink1() (gas: 49136)
+[32m[PASS][0m test_Constructor_RevertIfStartTimeEqualsZero() (gas: 48788)
+[32m[PASS][0m test_getConfig() (gas: 39798)
+[32m[PASS][0m test_getRate_AboveRateZeroAtTVL() (gas: 15353)
+[32m[PASS][0m test_getRate_AfterEndTime() (gas: 15117)
+[32m[PASS][0m test_getRate_AssetAmountBelowRateZeroAtTVL() (gas: 13203)
+[32m[PASS][0m test_getRate_AtKink1() (gas: 13406)
+[32m[PASS][0m test_getRate_AtKink2() (gas: 13459)
+[32m[PASS][0m test_getRate_AtKink3() (gas: 13433)
+[32m[PASS][0m test_getRate_AtRateZeroAtTVL() (gas: 13550)
+[32m[PASS][0m test_getRate_AtTVLZero() (gas: 11300)
+[32m[PASS][0m test_getRate_BeforeStartTime() (gas: 13207)
+[32m[PASS][0m test_getRate_LessThanKink1() (gas: 13572)
+[32m[PASS][0m test_getRate_MoreThanKink1LessThanKink2() (gas: 13508)
+[32m[PASS][0m test_getRate_MoreThanKink2LessThanKink3() (gas: 13558)
+[32m[PASS][0m test_getRate_MoreThanKink3() (gas: 13639)
+[32m[PASS][0m test_getRate_WithinTime() (gas: 13528)
+Test result: [32mok[0m. [32m25[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 4.94ms
+
+Running 4 tests for test/foundry/flashloan/flashloan.t.sol:FlashLenderAuthFunctionTests
+[32m[PASS][0m test_rescueFunds_asLiquidityAuth() (gas: 41543)
+[32m[PASS][0m test_rescueFunds_asLiquidityGovernance() (gas: 73176)
+[32m[PASS][0m test_rescueFunds_native() (gas: 29993)
+[32m[PASS][0m test_rescueFunds_revertUnauthorized() (gas: 34904)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 12.70ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndBorrowTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 84374)
+[32m[PASS][0m test_operate_LogOperate() (gas: 88092)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 81756)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 45770)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 81135)
+[32m[PASS][0m test_operate_StorageValues() (gas: 98943)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 14.23ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityPayback.t.sol:LiquidityUserModulePaybackTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 87333)
+[32m[PASS][0m test_operate_LogOperate() (gas: 88230)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 81894)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 61370)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 89954)
+[32m[PASS][0m test_operate_StorageValues() (gas: 101081)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 14.20ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndPaybackTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 110190)
+[32m[PASS][0m test_operate_LogOperate() (gas: 114037)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 101937)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 96895)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 106002)
+[32m[PASS][0m test_operate_StorageValues() (gas: 119124)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.21ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquiditySupply.t.sol:LiquidityUserModuleSupplyTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 124040)
+[32m[PASS][0m test_operate_LogOperate() (gas: 125001)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 118665)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 78484)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 107056)
+[32m[PASS][0m test_operate_StorageValues() (gas: 137852)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.14ms
+
+Running 2 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleChangeStatusTest
+[32m[PASS][0m test_AdminChangeStatus() (gas: 50438)
+[32m[PASS][0m test_AdminChangeStatus_LogChangeStatus() (gas: 44513)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 10.47ms
+
+Running 7 tests for test/foundry/lending/iTokenEIP2612Deposits.t.sol:iTokenEIP2612DepositsTest
+[32m[PASS][0m test_depositWithSignatureEIP2612() (gas: 173534)
+[32m[PASS][0m test_depositWithSignatureEIP2612_RevertWhenSharesDoNotMeetMinimumAmount() (gas: 170723)
+[32m[PASS][0m test_liquidityCallback() (gas: 176714)
+[32m[PASS][0m test_liquidityCallback_RevertIfAssetIsInvalid() (gas: 14238)
+[32m[PASS][0m test_liquidityCallback_RevertIfSenderIsNotLiquidityContract() (gas: 11780)
+[32m[PASS][0m test_mintWithSignatureEIP2612() (gas: 180761)
+[32m[PASS][0m test_mintWithSignatureEIP2612_RevertWhenMaxAssetsIsSurpassed() (gas: 177996)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 28.84ms
+
+Running 1 test for test/foundry/flashloan/flashloan.t.sol:FlashLenderCallbackFunction
+[32m[PASS][0m testLiquidityCallbackUnauthorizedRevert() (gas: 13603)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 12.28ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityPayback.t.sol:LiquidityUserModulePaybackTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 87898)
+[32m[PASS][0m test_operate_LogOperate() (gas: 88795)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 82459)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 61764)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 90348)
+[32m[PASS][0m test_operate_StorageValues() (gas: 101646)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.09ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquiditySupply.t.sol:LiquidityUserModuleSupplyTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 118744)
+[32m[PASS][0m test_operate_LogOperate() (gas: 119705)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 113369)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 78484)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 107056)
+[32m[PASS][0m test_operate_StorageValues() (gas: 132556)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 14.70ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndPaybackTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 114708)
+[32m[PASS][0m test_operate_LogOperate() (gas: 121475)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 106655)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 96919)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 106026)
+[32m[PASS][0m test_operate_StorageValues() (gas: 123842)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 16.33ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndPaybackTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 109398)
+[32m[PASS][0m test_operate_LogOperate() (gas: 113245)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 101145)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 96501)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 105608)
+[32m[PASS][0m test_operate_StorageValues() (gas: 118332)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 16.39ms
+
+Running 14 tests for test/foundry/liquidity/userModule/liquidityOperate.t.sol:LiquidityUserModuleOperateExchangePricesStorageUpdateTests
+[32m[PASS][0m test_operate_NoStorageUpdateBelowUpdateThresholdBorrowRatio() (gas: 171712)
+[32m[PASS][0m test_operate_NoStorageUpdateBelowUpdateThresholdSupplyRatio() (gas: 134506)
+[32m[PASS][0m test_operate_NoStorageUpdateBelowUpdateThresholdUtilization() (gas: 80680)
+[32m[PASS][0m test_operate_NoStorageUpdateJustDeposit() (gas: 91418)
+[32m[PASS][0m test_operate_RevertValueOverflowBorrowExchangePrice() (gas: 595690)
+[32m[PASS][0m test_operate_RevertValueOverflowSupplyExchangePrice() (gas: 578191)
+[32m[PASS][0m test_operate_RevertValueOverflowUtilization() (gas: 160079)
+[32m[PASS][0m test_operate_StorageUpdateBecauseOfBorrowRatioAboveUpdateThreshold() (gas: 175039)
+[32m[PASS][0m test_operate_StorageUpdateBecauseOfBorrowRatioModeChangeAboveUpdateThreshold() (gas: 174827)
+[32m[PASS][0m test_operate_StorageUpdateBecauseOfBorrowRatioModeChangeBelowUpdateThreshold() (gas: 174784)
+[32m[PASS][0m test_operate_StorageUpdateBecauseOfSupplyRatioAboveUpdateThreshold() (gas: 137564)
+[32m[PASS][0m test_operate_StorageUpdateBecauseOfSupplyRatioModeChangeAboveUpdateThreshold() (gas: 123973)
+[32m[PASS][0m test_operate_StorageUpdateBecauseOfSupplyRatioModeChangeBelowUpdateThreshold() (gas: 123983)
+[32m[PASS][0m test_operate_StorageUpdateBecauseOfUtilization() (gas: 92147)
+Test result: [32mok[0m. [32m14[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 41.10ms
+
+Running 3 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleCollectRevenueTest
+[32m[PASS][0m test_AdminCollectRevenue() (gas: 213589)
+[32m[PASS][0m test_AdminCollectRevenueNoSuppliers() (gas: 239873)
+[32m[PASS][0m test_AdminCollectRevenue_LogCollectRevenue() (gas: 226835)
+Test result: [32mok[0m. [32m3[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.42ms
+
+Running 2 tests for test/foundry/flashloan/flashloan.t.sol:FlashLenderFlashFeeFunction
+[32m[PASS][0m testFlashFee() (gas: 15562)
+[32m[PASS][0m testTokenNotSupportedRevert() (gas: 14549)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 9.30ms
+
+Running 7 tests for test/foundry/liquidity/userModule/liquidityPayback.t.sol:LiquidityUserModulePaybackTests
+[32m[PASS][0m test_operate_RevertIfPaybackMoreThanBorrowed() (gas: 80682)
+[32m[PASS][0m test_operate_RevertIfPaybackMoreThanBorrowedNative() (gas: 66427)
+[32m[PASS][0m test_operate_RevertPaybackNoApprovalForTransfer() (gas: 51341)
+[32m[PASS][0m test_operate_RevertPaybackNotEnoughTransferIn() (gas: 80607)
+[32m[PASS][0m test_operate_RevertPaybackNotEnoughTransferInNative() (gas: 66668)
+[32m[PASS][0m test_operate_RevertPaybackOperateAmountOutOfBounds() (gas: 28568)
+[32m[PASS][0m test_operate_RevertPaybackTransferTooMuchNative() (gas: 64556)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 13.83ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquiditySupply.t.sol:LiquidityUserModuleSupplyTests
+[32m[PASS][0m test_operate_RevertSupplyNoApprovalForTransfer() (gas: 68286)
+[32m[PASS][0m test_operate_RevertSupplyNotEnoughTransferIn() (gas: 114720)
+[32m[PASS][0m test_operate_RevertSupplyNotEnoughTransferInNative() (gas: 83673)
+[32m[PASS][0m test_operate_RevertSupplyOperateAmountOutOfBounds() (gas: 45603)
+[32m[PASS][0m test_operate_RevertSupplyTransferTooMuch() (gas: 114605)
+[32m[PASS][0m test_operate_RevertSupplyTransferTooMuchNative() (gas: 81517)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 13.82ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityBorrow.t.sol:LiquidityUserModuleBorrowTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 78469)
+[32m[PASS][0m test_operate_LogOperate() (gas: 79671)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 73335)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 45603)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 74187)
+[32m[PASS][0m test_operate_StorageValues() (gas: 92522)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 9.43ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndPaybackTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 95499)
+[32m[PASS][0m test_operate_LogOperate() (gas: 96213)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 89877)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 61503)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 96868)
+[32m[PASS][0m test_operate_StorageValues() (gas: 107064)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 17.92ms
+
+Running 4 tests for test/foundry/liquidity/userModule/liquidityOperate.t.sol:LiquidityUserModuleOperateTests
+[32m[PASS][0m test_operate_AfterUnpaused() (gas: 242844)
+[32m[PASS][0m test_operate_RevertMsgValueForNonNativeToken() (gas: 61390)
+[32m[PASS][0m test_operate_RevertOperateAmountsZero() (gas: 45429)
+[32m[PASS][0m test_operate_RevertReentrancy() (gas: 77884)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 14.03ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndPaybackTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 113880)
+[32m[PASS][0m test_operate_LogOperate() (gas: 120647)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 105827)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 96525)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 105632)
+[32m[PASS][0m test_operate_StorageValues() (gas: 123014)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 19.93ms
+
+Running 9 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleGovernanceModuleTest
+[32m[PASS][0m testAdminEmitLogUpdateAuthsForUpdateAuths() (gas: 79828)
+[32m[PASS][0m testAdminEmitLogUpdateGuardiansForUpdateGuardians() (gas: 79793)
+[32m[PASS][0m testAdminEmitLogUpdateRevenueCollectorForUpdateRevenueCollector() (gas: 44730)
+[32m[PASS][0m testAdminUpdateAuths() (gas: 80073)
+[32m[PASS][0m testAdminUpdateAuthsUnauthorizedRevert() (gas: 58875)
+[32m[PASS][0m testAdminUpdateGuardians() (gas: 79895)
+[32m[PASS][0m testAdminUpdateGuardiansUnauthorizedRevert() (gas: 60798)
+[32m[PASS][0m testAdminUpdateRevenueCollector() (gas: 51414)
+[32m[PASS][0m testAdminUpdateRevenueCollectorUnauthorizedRevert() (gas: 61914)
+Test result: [32mok[0m. [32m9[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.02ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityBorrow.t.sol:LiquidityUserModuleBorrowTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 78529)
+[32m[PASS][0m test_operate_LogOperate() (gas: 79731)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 73395)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 45603)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 74187)
+[32m[PASS][0m test_operate_StorageValues() (gas: 92582)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 10.06ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquiditySupply.t.sol:LiquidityUserModuleSupplyTestsInterestFree
+[32m[PASS][0m test_operate_RevertSupplyNoApprovalForTransfer() (gas: 68286)
+[32m[PASS][0m test_operate_RevertSupplyNotEnoughTransferIn() (gas: 114720)
+[32m[PASS][0m test_operate_RevertSupplyNotEnoughTransferInNative() (gas: 83673)
+[32m[PASS][0m test_operate_RevertSupplyOperateAmountOutOfBounds() (gas: 45603)
+[32m[PASS][0m test_operate_RevertSupplyTransferTooMuch() (gas: 114605)
+[32m[PASS][0m test_operate_RevertSupplyTransferTooMuchNative() (gas: 81517)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 16.91ms
+
+Running 9 tests for test/foundry/liquidity/userModule/liquidityPayback.t.sol:LiquidityUserModulePaybackTestsInterestFree
+[32m[PASS][0m test_operate_PaybackExactToZero() (gas: 102429)
+[32m[PASS][0m test_operate_PaybackMoreThanTotalBorrow() (gas: 118849)
+[32m[PASS][0m test_operate_RevertIfPaybackMoreThanBorrowed() (gas: 79428)
+[32m[PASS][0m test_operate_RevertIfPaybackMoreThanBorrowedNative() (gas: 65628)
+[32m[PASS][0m test_operate_RevertPaybackNoApprovalForTransfer() (gas: 51341)
+[32m[PASS][0m test_operate_RevertPaybackNotEnoughTransferIn() (gas: 80630)
+[32m[PASS][0m test_operate_RevertPaybackNotEnoughTransferInNative() (gas: 66668)
+[32m[PASS][0m test_operate_RevertPaybackOperateAmountOutOfBounds() (gas: 28568)
+[32m[PASS][0m test_operate_RevertPaybackTransferTooMuchNative() (gas: 64556)
+Test result: [32mok[0m. [32m9[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 18.38ms
+
+Running 5 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModulePauseUserTest
+[32m[PASS][0m test_GuardianPauseUser() (gas: 60328)
+[32m[PASS][0m test_GuardianPauseUser_LogPauseUser() (gas: 49997)
+[32m[PASS][0m test_GuardianPauseUser_RevertUserNotDefined() (gas: 55127)
+[32m[PASS][0m test_GuardianUnpauseUser() (gas: 66248)
+[32m[PASS][0m test_GuardianUnpauseUser_LogUnpauseUser() (gas: 55887)
+Test result: [32mok[0m. [32m5[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.54ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndBorrowTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 168065)
+[32m[PASS][0m test_operate_LogOperate() (gas: 174698)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 160117)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 130646)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 139753)
+[32m[PASS][0m test_operate_StorageValues() (gas: 177304)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 18.35ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndPaybackTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 96291)
+[32m[PASS][0m test_operate_LogOperate() (gas: 97005)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 90669)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 61897)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 97262)
+[32m[PASS][0m test_operate_StorageValues() (gas: 107856)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 21.48ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndPaybackTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 102587)
+[32m[PASS][0m test_operate_LogOperate() (gas: 103501)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 97165)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 61537)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 96902)
+[32m[PASS][0m test_operate_StorageValues() (gas: 114352)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 24.11ms
+
+Running 7 tests for test/foundry/liquidity/userModule/liquidityBorrow.t.sol:LiquidityUserModuleBorrowTests
+[32m[PASS][0m test_operate_RevertBorrowOperateAmountOutOfBounds() (gas: 28559)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableBalance() (gas: 58624)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableBalanceNative() (gas: 50352)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableSupply() (gas: 46427)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableSupplyNative() (gas: 44386)
+[32m[PASS][0m test_operate_RevertIfBorrowToNotSet() (gas: 28374)
+[32m[PASS][0m test_operate_RevertIfBorrowToNotSetNative() (gas: 26210)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 16.08ms
+
+Running 2 tests for test/foundry/liquidity/userModule/liquidityPayback.t.sol:LiquidityUserModulePaybackTestsWithInterest
+[32m[PASS][0m test_operate_PaybackExactToZero() (gas: 105926)
+[32m[PASS][0m test_operate_PaybackMoreThanTotalBorrow() (gas: 122852)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 16.06ms
+
+Running 2 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleTokenConfigTest
+[32m[PASS][0m test_UpdateTokenConfigs() (gas: 43609)
+[32m[PASS][0m test_UpdateTokenConfigs_LogUpdateTokenConfigs() (gas: 39659)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 13.50ms
+
+Running 43 tests for test/foundry/libraries/bigMath/bigMath.t.sol:LibraryBigMathTest
+[32m[PASS][0m testFuzz_decompileBigNumber(uint256) (runs: 256, μ: 6239, ~: 6239)
+[32m[PASS][0m testFuzz_fromBigNumber(uint128) (runs: 256, μ: 12168, ~: 12164)
+[32m[PASS][0m testFuzz_fromBigNumber_ThreeParams(uint128) (runs: 256, μ: 16917, ~: 16911)
+[32m[PASS][0m test_decompileBigNumber_EdgeCases() (gas: 7639)
+[32m[PASS][0m test_decompileBigNumber_KnownNumber() (gas: 5902)
+[32m[PASS][0m test_decompileBigNumber_MaxCoefficientZeroExponent() (gas: 6297)
+[32m[PASS][0m test_decompileBigNumber_ZeroBigNumber() (gas: 5966)
+[32m[PASS][0m test_divBigNumber_NormalCase2() (gas: 18697)
+[32m[PASS][0m test_divBigNumber_WithPrecision() (gas: 18135)
+[32m[PASS][0m test_divBigNumber_ZeroPrecision() (gas: 18698)
+[32m[PASS][0m test_fromBigNumber() (gas: 13908)
+[32m[PASS][0m test_fromBigNumber_SmallNumber() (gas: 9357)
+[32m[PASS][0m test_fromBigNumber_ThreeParams() (gas: 18249)
+[32m[PASS][0m test_fromBigNumber_ThreeParams_SmallNonZero() (gas: 5713)
+[32m[PASS][0m test_fromBigNumber_ThreeParams_WithRoundUp() (gas: 18351)
+[32m[PASS][0m test_fromBigNumber_ThreeParams_Zero() (gas: 9908)
+[32m[PASS][0m test_fromBigNumber_WithDecompile() (gas: 16988)
+[32m[PASS][0m test_fromBigNumber_WithRoundUp() (gas: 16054)
+[32m[PASS][0m test_mostSignificantBit_LargeNumber() (gas: 6047)
+[32m[PASS][0m test_mostSignificantBit_MaxUint() (gas: 6095)
+[32m[PASS][0m test_mostSignificantBit_One() (gas: 5940)
+[32m[PASS][0m test_mostSignificantBit_PowersOfTwo() (gas: 199629)
+[32m[PASS][0m test_mostSignificantBit_SmallNumber() (gas: 6011)
+[32m[PASS][0m test_mostSignificantBit_Zero() (gas: 5951)
+[32m[PASS][0m test_mulBigNumber_NormalCase() (gas: 17679)
+[32m[PASS][0m test_mulDivBigNumber_DivisionByZero() (gas: 17517)
+[32m[PASS][0m test_mulDivBigNumber_EqualNumber1AndDivisor() (gas: 17331)
+[32m[PASS][0m test_mulDivBigNumber_MaxBigNumber() (gas: 13535)
+[32m[PASS][0m test_mulDivBigNumber_PrecisionLoss() (gas: 9210)
+[32m[PASS][0m test_mulDivBigNumber_RevertExponentOverflow() (gas: 9777)
+[32m[PASS][0m test_mulDivBigNumber_RevertIfExponentBelowZero() (gas: 18142)
+[32m[PASS][0m test_mulDivBigNumber_Rounding() (gas: 9221)
+[32m[PASS][0m test_mulDivBigNumber_VerySmallDivisor() (gas: 15122)
+[32m[PASS][0m test_mulDivBigNumber_ZeroBigNumber() (gas: 14010)
+[32m[PASS][0m test_mulDivBigNumber_ZeroNumber1() (gas: 19783)
+[32m[PASS][0m test_mulDivNormal_BigNumber1IsGreaterThanBigNumber2() (gas: 18375)
+[32m[PASS][0m test_mulDivNormal_BigNumber2IsGreaterThanBigNumber1() (gas: 16334)
+[32m[PASS][0m test_toBigNumber() (gas: 8528)
+[32m[PASS][0m test_toBigNumber_Basic() (gas: 6547)
+[32m[PASS][0m test_toBigNumber_ExponentOverflow() (gas: 9044)
+[32m[PASS][0m test_toBigNumber_LargeNumber() (gas: 6875)
+[32m[PASS][0m test_toBigNumber_WithRoundUp() (gas: 10361)
+[32m[PASS][0m test_toBigNumber_WithRoundUpReachCoefficientSize() (gas: 8394)
+Test result: [32mok[0m. [32m43[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 113.23ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityWithdraw.t.sol:LiquidityUserModuleWithdrawTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 85026)
+[32m[PASS][0m test_operate_LogOperate() (gas: 89328)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 77220)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 73687)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 74021)
+[32m[PASS][0m test_operate_StorageValues() (gas: 96407)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 20.33ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndBorrowTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 167778)
+[32m[PASS][0m test_operate_LogOperate() (gas: 174411)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 159830)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 130646)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 139753)
+[32m[PASS][0m test_operate_StorageValues() (gas: 177017)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 19.47ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndBorrowTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 91940)
+[32m[PASS][0m test_operate_LogOperate() (gas: 98511)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 86191)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 73701)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 80808)
+[32m[PASS][0m test_operate_StorageValues() (gas: 103378)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 19.46ms
+
+Running 7 tests for test/foundry/liquidity/userModule/liquidityBorrow.t.sol:LiquidityUserModuleBorrowTestsInterestFree
+[32m[PASS][0m test_operate_RevertBorrowOperateAmountOutOfBounds() (gas: 28559)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableBalance() (gas: 53207)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableBalanceNative() (gas: 44935)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableSupply() (gas: 46367)
+[32m[PASS][0m test_operate_RevertIfBorrowMoreThanAvailableSupplyNative() (gas: 44326)
+[32m[PASS][0m test_operate_RevertIfBorrowToNotSet() (gas: 28374)
+[32m[PASS][0m test_operate_RevertIfBorrowToNotSetNative() (gas: 26210)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 17.32ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndPaybackTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 103415)
+[32m[PASS][0m test_operate_LogOperate() (gas: 104329)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 97993)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 61931)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 97296)
+[32m[PASS][0m test_operate_StorageValues() (gas: 115180)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 21.38ms
+
+Running 7 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleUpdateRateDataV1sTest
+[32m[PASS][0m testAdminEmitUpdateRateDataV1sForUpdateRateDataV1s() (gas: 97831)
+[32m[PASS][0m testAdminUpdateRateDataV1sOverflowKinkRevert() (gas: 59209)
+[32m[PASS][0m testAdminUpdateRateDataV1sOverflowRateAtZeroRevert() (gas: 59149)
+[32m[PASS][0m testAdminUpdateRateDataV1sRateAtKinkBiggerRateAtMaxRevert() (gas: 65733)
+[32m[PASS][0m testAdminUpdateRateDataV1sRateAtZeroBiggerRateAtKinkRevert() (gas: 62439)
+[32m[PASS][0m testAdminUpdateRateDataV1sUnauthorizedRevert() (gas: 135051)
+[32m[PASS][0m test_AdminUpdateRateDataV1s() (gas: 112687)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 17.50ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndBorrowTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 139325)
+[32m[PASS][0m test_operate_LogOperate() (gas: 140344)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 134008)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 78498)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 113863)
+[32m[PASS][0m test_operate_StorageValues() (gas: 151195)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 13.86ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquiditySupply.t.sol:LiquidityUserModuleSupplyTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 149793)
+[32m[PASS][0m test_operate_LogOperate() (gas: 153720)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 141787)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 130632)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 132966)
+[32m[PASS][0m test_operate_StorageValues() (gas: 160974)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 19.51ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityWithdraw.t.sol:LiquidityUserModuleWithdrawTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 84801)
+[32m[PASS][0m test_operate_LogOperate() (gas: 89103)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 76995)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 73687)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 74021)
+[32m[PASS][0m test_operate_StorageValues() (gas: 96182)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 22.14ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndBorrowTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 91617)
+[32m[PASS][0m test_operate_LogOperate() (gas: 98188)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 85868)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 73701)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 80808)
+[32m[PASS][0m test_operate_StorageValues() (gas: 103055)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 20.97ms
+
+Running 1 test for test/foundry/liquidity/userModule/liquidityBorrow.t.sol:LiquidityUserModuleBorrowTestsWithInterest
+[32m[PASS][0m test_operate_BorrowWhenUtilizationAbove100Percent() (gas: 395444)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 18.94ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityPayback.t.sol:LiquidityUserModulePaybackTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 101787)
+[32m[PASS][0m test_operate_LogOperate() (gas: 105714)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 93717)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 96752)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 99098)
+[32m[PASS][0m test_operate_StorageValues() (gas: 112904)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 24.32ms
+
+Running 9 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleUpdateRateDataV2sTest
+[32m[PASS][0m testAdminEmitUpdateRateDataV2sForUpdateRateDataV2s() (gas: 112524)
+[32m[PASS][0m testAdminUpdateRateDataV2s() (gas: 127319)
+[32m[PASS][0m testAdminUpdateRateDataV2sOverflowKink1Revert() (gas: 67931)
+[32m[PASS][0m testAdminUpdateRateDataV2sOverflowKink2Revert() (gas: 67963)
+[32m[PASS][0m testAdminUpdateRateDataV2sOverflowRateAtZeroRevert() (gas: 67717)
+[32m[PASS][0m testAdminUpdateRateDataV2sRateAtKink1BiggerRateAtKink2Revert() (gas: 69665)
+[32m[PASS][0m testAdminUpdateRateDataV2sRateAtKink2BiggerRateAtMaxRevert() (gas: 72873)
+[32m[PASS][0m testAdminUpdateRateDataV2sRateAtZeroBiggerRateAtKink1Revert() (gas: 68403)
+[32m[PASS][0m testAdminUpdateRateDataV2sUnauthorizedRevert() (gas: 148734)
+Test result: [32mok[0m. [32m9[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 20.55ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleSupplyAndBorrowTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 139612)
+[32m[PASS][0m test_operate_LogOperate() (gas: 140631)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 134295)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 78498)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 113863)
+[32m[PASS][0m test_operate_StorageValues() (gas: 151482)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 21.27ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquiditySupply.t.sol:LiquidityUserModuleSupplyTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 155089)
+[32m[PASS][0m test_operate_LogOperate() (gas: 159016)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 147083)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 130632)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 132966)
+[32m[PASS][0m test_operate_StorageValues() (gas: 166270)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 23.73ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityWithdraw.t.sol:LiquidityUserModuleWithdrawTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 72953)
+[32m[PASS][0m test_operate_LogOperate() (gas: 74114)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 67778)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 45756)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 74328)
+[32m[PASS][0m test_operate_StorageValues() (gas: 86965)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 22.76ms
+
+Running 4 tests for test/foundry/liquidity/userModule/liquidityBorrowLimit.t.sol:LiquidityUserModuleBorrowLimitTestsInterestFree
+[32m[PASS][0m test_operate_BorrowExactToLimit() (gas: 71746)
+[32m[PASS][0m test_operate_RevertIfBorrowLimitReached() (gas: 36738)
+[32m[PASS][0m test_operate_RevertIfBorrowLimitReachedForSupplyAndBorrow() (gas: 72374)
+[32m[PASS][0m test_operate_RevertIfBorrowLimitReachedForWithdrawAndBorrow() (gas: 45281)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 17.63ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityOperateCombinations.t.sol:LiquidityUserModuleWithdrawAndBorrowTestSuiteInterestFreeNative
+[32m[PASS][0m test_operate_Balances() (gas: 84051)
+[32m[PASS][0m test_operate_LogOperate() (gas: 87769)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 81433)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 45770)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 81135)
+[32m[PASS][0m test_operate_StorageValues() (gas: 98620)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 21.19ms
+
+Running 2 tests for test/foundry/libraries/liquidityCalcs/liquidityCalcs.t.sol:LibraryLiquidityCalcsBorrowLimitTests
+[32m[PASS][0m testLiquidityCalcs_CalcBorrowLimitCombination() (gas: 116529)
+[32m[PASS][0m testLiquidityCalcs_CalcBorrowLimitFirstAction() (gas: 14514)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 5.38ms
+
+Running 2 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleUpdateUserClassesTest
+[32m[PASS][0m test_AdminUpdateUserClasses() (gas: 91200)
+[32m[PASS][0m test_AdminUpdateUserClasses_RevertClassNotExist() (gas: 51604)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 17.87ms
+
+Running 1 test for test/foundry/libraries/liquidityCalcs/liquidityCalcs.t.sol:LibraryLiquidityCalcsRateV1Tests
+[32m[PASS][0m testLiquidityCalcs_CalcRateV1() (gas: 10240)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 904.12µs
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityPayback.t.sol:LiquidityUserModulePaybackTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 101222)
+[32m[PASS][0m test_operate_LogOperate() (gas: 105149)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 93152)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 96358)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 98704)
+[32m[PASS][0m test_operate_StorageValues() (gas: 112339)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 25.61ms
+
+Running 4 tests for test/foundry/liquidity/userModule/liquidityBorrowLimit.t.sol:LiquidityUserModuleBorrowLimitTestsWithInterest
+[32m[PASS][0m test_operate_BorrowExactToLimit() (gas: 71844)
+[32m[PASS][0m test_operate_RevertIfBorrowLimitReached() (gas: 36864)
+[32m[PASS][0m test_operate_RevertIfBorrowLimitReachedForSupplyAndBorrow() (gas: 72500)
+[32m[PASS][0m test_operate_RevertIfBorrowLimitReachedForWithdrawAndBorrow() (gas: 45407)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 10.14ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityWithdraw.t.sol:LiquidityUserModuleWithdrawTestSuiteNative
+[32m[PASS][0m test_operate_Balances() (gas: 73178)
+[32m[PASS][0m test_operate_LogOperate() (gas: 74339)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 68003)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 45756)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 74328)
+[32m[PASS][0m test_operate_StorageValues() (gas: 87190)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.32ms
+
+Running 1 test for test/foundry/libraries/liquidityCalcs/liquidityCalcs.t.sol:LibraryLiquidityCalcsRateV2Tests
+[32m[PASS][0m testLiquidityCalcs_CalcRateV2() (gas: 10674)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 929.75µs
+
+Running 1 test for test/foundry/libraries/liquidityCalcs/liquidityCalcs.t.sol:LibraryLiquidityCalcsTokenDataTests
+[32m[PASS][0m testLiquidityCalcs_calcExchangePrices() (gas: 19842)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 1.31ms
+
+Running 5 tests for test/foundry/liquidity/userModule/liquidityWithdraw.t.sol:LiquidityUserModuleWithdrawTests
+[32m[PASS][0m test_operate_RevertIfWithdrawMoreThanSupplied() (gas: 37066)
+[32m[PASS][0m test_operate_RevertIfWithdrawMoreThanSuppliedNative() (gas: 35046)
+[32m[PASS][0m test_operate_RevertIfWithdrawToNotSet() (gas: 28322)
+[32m[PASS][0m test_operate_RevertIfWithdrawToNotSetNative() (gas: 26236)
+[32m[PASS][0m test_operate_RevertWithdrawOperateAmountOutOfBounds() (gas: 28473)
+Test result: [32mok[0m. [32m5[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 10.63ms
+
+Running 5 tests for test/foundry/flashloan/flashloan.t.sol:FlashLenderFlashLoanMultipleFunction
+[32m[PASS][0m testFlashLoanMultiple() (gas: 255664)
+[32m[PASS][0m testInvalidAddressForTokenRevert() (gas: 13115)
+[32m[PASS][0m testMaxLoanAmountExceededRevert_OneToken() (gas: 34243)
+[32m[PASS][0m testMaxLoanAmountExceededRevert_ThreeTokensAndLastFails() (gas: 194543)
+[32m[PASS][0m testReceiverReturnedInvalidValueFlashloanRevert() (gas: 91838)
+Test result: [32mok[0m. [32m5[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 14.13ms
+
+Running 2 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleUserBorrowConfigTest
+[32m[PASS][0m testUpdateUserBorrowConfigLog() (gas: 69584)
+[32m[PASS][0m testupdateUserBorrowConfigs() (gas: 75661)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.43ms
+
+Running 6 tests for test/foundry/libraries/liquidityCalcs/liquidityCalcs.t.sol:LibraryLiquidityCalcsWithdrawalLimitTests
+[32m[PASS][0m testLiquidityCalcs_CalcWithdrawalLimitAfterOperate() (gas: 13640)
+[32m[PASS][0m testLiquidityCalcs_CalcWithdrawalLimitBeforeOperate() (gas: 13998)
+[32m[PASS][0m testLiquidityCalcs_CalcWithdrawalLimitBeforeOperate1() (gas: 13561)
+[32m[PASS][0m testLiquidityCalcs_CalcWithdrawalLimitBeforeOperate2() (gas: 14035)
+[32m[PASS][0m testLiquidityCalcs_CalcWithdrawalLimitCombination() (gas: 103866)
+[32m[PASS][0m testLiquidityCalcs_CalcWithdrawalLimit_FirstTimeAboveBaseLimit() (gas: 27440)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 7.49ms
+
+Running 7 tests for test/foundry/liquidity/userModule/liquidityWithdraw.t.sol:LiquidityUserModuleWithdrawTestsInterestFree
+[32m[PASS][0m test_operate_RevertIfWithdrawMoreThanSupplied() (gas: 36922)
+[32m[PASS][0m test_operate_RevertIfWithdrawMoreThanSuppliedNative() (gas: 34796)
+[32m[PASS][0m test_operate_RevertIfWithdrawToNotSet() (gas: 28366)
+[32m[PASS][0m test_operate_RevertIfWithdrawToNotSetNative() (gas: 26236)
+[32m[PASS][0m test_operate_RevertWithdrawOperateAmountOutOfBounds() (gas: 28473)
+[32m[PASS][0m test_operate_WithdrawExactToZero() (gas: 158236)
+[32m[PASS][0m test_operate_WithdrawMoreThanTotalSupply() (gas: 91671)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 14.51ms
+
+Running 7 tests for test/foundry/flashloan/flashloan.t.sol:FlashLenderFlashLoanFunction
+[32m[PASS][0m testFlashLoan() (gas: 101140)
+[32m[PASS][0m testFlashLoanETH() (gas: 90135)
+[32m[PASS][0m testFuzzFlashLoan(uint256) (runs: 256, μ: 101787, ~: 101721)
+[32m[PASS][0m testInvalidAddressForTokenRevert() (gas: 14445)
+[32m[PASS][0m testMaxLoanAmountExceededRevert() (gas: 33125)
+[32m[PASS][0m testMaxLoanFlashloanFunction() (gas: 24409)
+[32m[PASS][0m testReceiverReturnedInvalidValueFlashloanRevert() (gas: 90050)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 246.70ms
+
+Running 2 tests for test/foundry/liquidity/liquidityAdminModule.t.sol:LiquidityAdminModuleUserSupplyConfigTest
+[32m[PASS][0m testUpdateUserSupplyConfigLog() (gas: 64583)
+[32m[PASS][0m testupdateUserSupplyConfigs() (gas: 70839)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 14.96ms
+
+Running 28 tests for test/foundry/libraries/bigMath/bigMathMinified.t.sol:LibraryBigMathMinifiedTest
+[32m[PASS][0m testFuzz_decompileBigNumber(uint256) (runs: 256, μ: 6261, ~: 6261)
+[32m[PASS][0m testFuzz_fromBigNumber(uint128) (runs: 256, μ: 12129, ~: 12124)
+[32m[PASS][0m testFuzz_fromBigNumber_ThreeParams(uint128) (runs: 256, μ: 16946, ~: 16937)
+[32m[PASS][0m test_decompileBigNumber_EdgeCases() (gas: 7638)
+[32m[PASS][0m test_decompileBigNumber_KnownNumber() (gas: 5924)
+[32m[PASS][0m test_decompileBigNumber_MaxCoefficientZeroExponent() (gas: 6255)
+[32m[PASS][0m test_decompileBigNumber_ZeroBigNumber() (gas: 5966)
+[32m[PASS][0m test_fromBigNumber() (gas: 13867)
+[32m[PASS][0m test_fromBigNumber_SmallNumber() (gas: 9379)
+[32m[PASS][0m test_fromBigNumber_ThreeParams() (gas: 18253)
+[32m[PASS][0m test_fromBigNumber_ThreeParams_SmallNonZero() (gas: 5690)
+[32m[PASS][0m test_fromBigNumber_ThreeParams_WithRoundUp() (gas: 18310)
+[32m[PASS][0m test_fromBigNumber_ThreeParams_Zero() (gas: 9908)
+[32m[PASS][0m test_fromBigNumber_WithDecompile() (gas: 17014)
+[32m[PASS][0m test_fromBigNumber_WithRoundUp() (gas: 16080)
+[32m[PASS][0m test_mostSignificantBit_LargeNumber() (gas: 5982)
+[32m[PASS][0m test_mostSignificantBit_MaxUint() (gas: 6073)
+[32m[PASS][0m test_mostSignificantBit_One() (gas: 5940)
+[32m[PASS][0m test_mostSignificantBit_PowersOfTwo() (gas: 199606)
+[32m[PASS][0m test_mostSignificantBit_SmallNumber() (gas: 5966)
+[32m[PASS][0m test_mostSignificantBit_Zero() (gas: 5951)
+[32m[PASS][0m test_toBigNumber() (gas: 8506)
+[32m[PASS][0m test_toBigNumberPure_SameBigNumberAsFromToBigNumberFunction() (gas: 8138)
+[32m[PASS][0m test_toBigNumber_Basic() (gas: 6503)
+[32m[PASS][0m test_toBigNumber_ExponentOverflow() (gas: 8999)
+[32m[PASS][0m test_toBigNumber_LargeNumber() (gas: 6853)
+[32m[PASS][0m test_toBigNumber_WithRoundUp() (gas: 10361)
+[32m[PASS][0m test_toBigNumber_WithRoundUpReachCoefficientSize() (gas: 8416)
+Test result: [32mok[0m. [32m28[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 131.59ms
+
+Running 2 tests for test/foundry/liquidity/userModule/liquidityWithdraw.t.sol:LiquidityUserModuleWithdrawTestsWithInterest
+[32m[PASS][0m test_operate_WithdrawExactToZero() (gas: 159511)
+[32m[PASS][0m test_operate_WithdrawMoreThanTotalSupply() (gas: 174097)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 12.43ms
+
+Running 27 tests for test/foundry/libraries/bigMath/bigMathVault.t.sol:LibraryBigMathVaultTest
+[32m[PASS][0m test_divBigNumber_CheckWithMultiplication() (gas: 13289)
+[32m[PASS][0m test_divBigNumber_DivideByZero() (gas: 10568)
+[32m[PASS][0m test_divBigNumber_DivisionOfSameBigNumber() (gas: 16123)
+[32m[PASS][0m test_divBigNumber_WithSmallerCoefficientOfDivisor() (gas: 14541)
+[32m[PASS][0m test_divBigNumber_WithSmallerCoefficientOfFirstNumber() (gas: 14583)
+[32m[PASS][0m test_divBigNumber_WithSmallerExponentOfDivisor() (gas: 14482)
+[32m[PASS][0m test_divBigNumber_WithSmallerExponentOfFirstNumber() (gas: 14440)
+[32m[PASS][0m test_divBigNumber_ZeroValue() (gas: 12180)
+[32m[PASS][0m test_mulBigNumber_MultiplicationOfDoubledBigNumber() (gas: 14611)
+[32m[PASS][0m test_mulBigNumber_MultiplicationOfSameBigNumber() (gas: 16274)
+[32m[PASS][0m test_mulBigNumber_ReturnMaxMask() (gas: 10110)
+[32m[PASS][0m test_mulBigNumber_RightBelowMaxDebtFactor() (gas: 10096)
+[32m[PASS][0m test_mulBigNumber_WithSmallerCoefficientOfDivisor() (gas: 14589)
+[32m[PASS][0m test_mulBigNumber_WithSmallerCoefficientOfFirstNumber() (gas: 12388)
+[32m[PASS][0m test_mulBigNumber_WithSmallerExponentOfDivisor() (gas: 12388)
+[32m[PASS][0m test_mulBigNumber_WithSmallerExponentOfFirstNumber() (gas: 10277)
+[32m[PASS][0m test_mulDivBigNumber_Basic1() (gas: 12596)
+[32m[PASS][0m test_mulDivBigNumber_Basic2() (gas: 12597)
+[32m[PASS][0m test_mulDivBigNumber_MultiplicationOfDoubledBigNumber() (gas: 15266)
+[32m[PASS][0m test_mulDivBigNumber_MultiplicationOfSameBigNumber() (gas: 19662)
+[32m[PASS][0m test_mulDivBigNumber_WithSmallerCoefficientOfDivisor() (gas: 12736)
+[32m[PASS][0m test_mulDivBigNumber_WithSmallerExponentOfDivisor() (gas: 12640)
+[32m[PASS][0m test_mulDivNormal_AllSameNumbers() (gas: 13564)
+[32m[PASS][0m test_mulDivNormal_BigNumber1IsZero() (gas: 7913)
+[32m[PASS][0m test_mulDivNormal_NormalIsZero() (gas: 10101)
+[32m[PASS][0m test_mulDivNormal_WithTheSmallestValueForFirstNumber() (gas: 7995)
+[32m[PASS][0m test_mulDivNormal_WithTheSmallestValueForSecondNumber() (gas: 10047)
+Test result: [32mok[0m. [32m27[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 5.22ms
+
+Running 7 tests for test/foundry/liquidity/userModule/liquidityInOutBalancedOut.t.sol:LiquidityUserModuleInOutBalancedOutEncodingTests
+[32m[PASS][0m test_operate_InOutBalancedOutCombineEncodedWithDynamicData() (gas: 70658)
+[32m[PASS][0m test_operate_InOutBalancedOutEncodedWithBool() (gas: 70069)
+[32m[PASS][0m test_operate_InOutBalancedOutPacked() (gas: 69964)
+[32m[PASS][0m test_operate_InOutBalancedOutPackedWithBool() (gas: 69978)
+[32m[PASS][0m test_operate_InOutBalancedOutPackedWithDynamicTypes() (gas: 70083)
+[32m[PASS][0m test_operate_NotInOutBalancedOutCallbackDataTooShort() (gas: 162431)
+[32m[PASS][0m test_operate_RevertIfInOutBalancedOutEncodedWithDynamicData() (gas: 53487)
+Test result: [32mok[0m. [32m7[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 23.56ms
+
+Running 4 tests for test/foundry/liquidity/userModule/liquidityWithdrawalLimit.t.sol:LiquidityUserModuleWithdrawLimitTestsInterestFree
+[32m[PASS][0m test_operate_RevertIfWithdrawLimitReached() (gas: 50820)
+[32m[PASS][0m test_operate_RevertIfWithdrawLimitReachedForWithdrawAndBorrow() (gas: 37366)
+[32m[PASS][0m test_operate_RevertIfWithdrawLimitReachedForWithdrawAndPayback() (gas: 97732)
+[32m[PASS][0m test_operate_WithdrawExactToLimit() (gas: 66629)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 11.36ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityBorrow.t.sol:LiquidityUserModuleBorrowTestSuite
+[32m[PASS][0m test_operate_Balances() (gas: 90377)
+[32m[PASS][0m test_operate_LogOperate() (gas: 94545)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 82612)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 73534)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 73880)
+[32m[PASS][0m test_operate_StorageValues() (gas: 101799)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 24.95ms
+
+Running 4 tests for test/foundry/liquidity/userModule/liquidityWithdrawalLimit.t.sol:LiquidityUserModuleWithdrawLimitTestsWithInterest
+[32m[PASS][0m test_operate_RevertIfWithdrawLimitReached() (gas: 52099)
+[32m[PASS][0m test_operate_RevertIfWithdrawLimitReachedForWithdrawAndBorrow() (gas: 37628)
+[32m[PASS][0m test_operate_RevertIfWithdrawLimitReachedForWithdrawAndPayback() (gas: 97956)
+[32m[PASS][0m test_operate_WithdrawExactToLimit() (gas: 66854)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 10.91ms
+
+Running 9 tests for test/foundry/liquidity/userModule/liquidityInOutBalancedOut.t.sol:LiquidityUserModuleInOutBalancedOutTests
+[32m[PASS][0m test_operate_InOutBalancedOutSupplyAndBorrow() (gas: 84308)
+[32m[PASS][0m test_operate_InOutBalancedOutSupplyAndBorrowNative() (gas: 73991)
+[32m[PASS][0m test_operate_InOutBalancedOutWithdrawAndPayback() (gas: 125062)
+[32m[PASS][0m test_operate_InOutBalancedOutWithdrawAndPaybackNative() (gas: 107621)
+[32m[PASS][0m test_operate_NotInOutBalancedOutIfInFromIsNotBorrowTo() (gas: 149165)
+[32m[PASS][0m test_operate_NotInOutBalancedOutIfInFromIsNotMsgSenderForBorrowTo() (gas: 106178)
+[32m[PASS][0m test_operate_NotInOutBalancedOutIfInFromIsNotMsgSenderForWithdrawTo() (gas: 142851)
+[32m[PASS][0m test_operate_NotInOutBalancedOutIfInFromIsNotWithdrawTo() (gas: 183112)
+[32m[PASS][0m test_operate_NotInOutBalancedOutIfWithMsgValueNative() (gas: 99595)
+Test result: [32mok[0m. [32m9[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 30.80ms
+
+Running 6 tests for test/foundry/liquidity/userModule/liquidityBorrow.t.sol:LiquidityUserModuleBorrowTestSuiteInterestFree
+[32m[PASS][0m test_operate_Balances() (gas: 90317)
+[32m[PASS][0m test_operate_LogOperate() (gas: 94485)
+[32m[PASS][0m test_operate_ReturnValues() (gas: 82552)
+[32m[PASS][0m test_operate_RevertUserNotDefined() (gas: 73534)
+[32m[PASS][0m test_operate_RevertUserPaused() (gas: 73880)
+[32m[PASS][0m test_operate_StorageValues() (gas: 101739)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 24.92ms
+
+Running 15 tests for test/foundry/liquidity/userModule/liquidityYield.t.sol:LiquidityUserModuleYieldTests
+[32m[PASS][0m test_operate_ExchangePriceBorrowInterestFreeOnly() (gas: 198468)
+[32m[PASS][0m test_operate_ExchangePriceNumberUpOnlyWhenNoStorageUpdate() (gas: 238453)
+[32m[PASS][0m test_operate_ExchangePriceSequences() (gas: 211608)
+[32m[PASS][0m test_operate_ExchangePriceSupplyInterestFreeOnly() (gas: 198624)
+[32m[PASS][0m test_operate_ExchangePriceSupplyWithInterestOnly() (gas: 184962)
+[32m[PASS][0m test_operate_ExchangePriceWhenBorrowInterestFreeBigger() (gas: 214935)
+[32m[PASS][0m test_operate_ExchangePriceWhenBorrowInterestFreeBiggerWithRevenue() (gas: 235469)
+[32m[PASS][0m test_operate_ExchangePriceWhenBorrowWithInterestBigger() (gas: 214866)
+[32m[PASS][0m test_operate_ExchangePriceWhenBorrowWithInterestBiggerWithRevenue() (gas: 235358)
+[32m[PASS][0m test_operate_ExchangePriceWhenBorrowWithInterestExacltyBorrowInterestFree() (gas: 214677)
+[32m[PASS][0m test_operate_ExchangePriceWhenSupplyInterestFreeBigger() (gas: 223682)
+[32m[PASS][0m test_operate_ExchangePriceWhenSupplyInterestFreeBiggerWithRevenueFee() (gas: 244151)
+[32m[PASS][0m test_operate_ExchangePriceWhenSupplyWithInterestBigger() (gas: 223502)
+[32m[PASS][0m test_operate_ExchangePriceWhenSupplyWithInterestBiggerWithRevenueFee() (gas: 243945)
+[32m[PASS][0m test_operate_ExchangePriceWhenSupplyWithInterestExactlySupplyInterestFree() (gas: 222941)
+Test result: [32mok[0m. [32m15[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 42.63ms
+
+Running 1 test for test/foundry/proxy/proxy.t.sol:InfiniteProxyTest
+[32m[PASS][0m testProxyReadFromStorage() (gas: 15489)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 12.67ms
+
+Running 1 test for test/foundry/lending/iTokenWithInterest.t.sol:iTokenWithInterestGasTestFirstDeposit
+[32m[PASS][0m test_deposit_GasFirstDeposit() (gas: 138138)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 19.63ms
+
+Running 1 test for test/foundry/lending/iTokenWithInterest.t.sol:iTokenWithInterestGasTestSecondDeposit
+[32m[PASS][0m test_deposit_GasSecondDeposit() (gas: 103980)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 15.60ms
+
+Running 17 tests for test/foundry/lending/helper/solmate-ERC4626.t.sol:ERC4626Test
+[32m[PASS][0m invariantMetadata() (runs: 1, calls: 1, reverts: 1)
+[32m[PASS][0m testFailDepositWithNoApproval() (gas: 13346)
+[32m[PASS][0m testFailDepositWithNotEnoughApproval() (gas: 86992)
+[32m[PASS][0m testFailDepositZero() (gas: 7795)
+[32m[PASS][0m testFailMintWithNoApproval() (gas: 13286)
+[32m[PASS][0m testFailRedeemWithNoShareAmount() (gas: 32342)
+[32m[PASS][0m testFailRedeemWithNotEnoughShareAmount() (gas: 203649)
+[32m[PASS][0m testFailRedeemZero() (gas: 8005)
+[32m[PASS][0m testFailWithdrawWithNoUnderlyingAmount() (gas: 32267)
+[32m[PASS][0m testFailWithdrawWithNotEnoughUnderlyingAmount() (gas: 203614)
+[32m[PASS][0m testMetadata(string,string) (runs: 256, μ: 1505281, ~: 1499795)
+[32m[PASS][0m testMintZero() (gas: 54578)
+[32m[PASS][0m testMultipleMintDepositRedeemWithdraw() (gas: 411124)
+[32m[PASS][0m testSingleDepositWithdraw(uint128) (runs: 256, μ: 206849, ~: 206858)
+[32m[PASS][0m testSingleMintRedeem(uint128) (runs: 256, μ: 200680, ~: 200691)
+[32m[PASS][0m testVaultInteractionsForSomeoneElse() (gas: 286168)
+[32m[PASS][0m testWithdrawZero() (gas: 52391)
+Test result: [32mok[0m. [32m17[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 472.95ms
+
+Running 4 tests for test/foundry/lending/variables.t.sol:ConstantsTest
+[32m[PASS][0m test_ASSET() (gas: 7660)
+[32m[PASS][0m test_LENDING_FACTORY() (gas: 7615)
+[32m[PASS][0m test_LIQUIDITY() (gas: 7638)
+[32m[PASS][0m test_getLiquiditySlotLinksAsset() (gas: 7793)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 1.03ms
+
+Running 2 tests for test/foundry/lending/variables.t.sol:VariablesTest
+[32m[PASS][0m test_initialState() (gas: 14619)
+[32m[PASS][0m test_validAddressModifier() (gas: 5707)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 1.39ms
+
+Running 18 tests for test/foundry/lending/erc4626.t.sol:ERC4626iTokenTest
+[32m[PASS][0m invariantMetadata() (runs: 1, calls: 2, reverts: 1)
+[32m[PASS][0m testFailDepositWithNoApproval() (gas: 37973)
+[32m[PASS][0m testFailDepositWithNotEnoughApproval() (gas: 94690)
+[32m[PASS][0m testFailDepositZero() (gas: 24952)
+[32m[PASS][0m testFailMintWithNoApproval() (gas: 41786)
+[32m[PASS][0m testFailRedeemWithNoShareAmount() (gas: 21590)
+[32m[PASS][0m testFailRedeemWithNotEnoughShareAmount() (gas: 164903)
+[32m[PASS][0m testFailRedeemZero() (gas: 37355)
+[32m[PASS][0m testFailWithdrawWithNoUnderlyingAmount() (gas: 19729)
+[32m[PASS][0m testFailWithdrawWithNotEnoughUnderlyingAmount() (gas: 163053)
+[32m[PASS][0m testMetadata(string,string) (runs: 256, μ: 1504121, ~: 1499507)
+[32m[PASS][0m testMintZero() (gas: 32239)
+[32m[PASS][0m testMultipleMintDepositRedeemWithdraw() (gas: 521586)
+[31m[FAIL. Reason: Assertion failed.][0m testMultipleMintDepositRedeemWithdraw_WithActiveRewards() (gas: 1405825)
+[32m[PASS][0m testSingleDepositWithdraw(uint128) (runs: 256, μ: 149311, ~: 148896)
+[32m[PASS][0m testSingleMintRedeem(uint128) (runs: 256, μ: 152265, ~: 151740)
+[32m[PASS][0m testVaultInteractionsForSomeoneElse() (gas: 308094)
+[32m[PASS][0m testWithdrawZero() (gas: 106027)
+Test result: [31mFAILED[0m. [32m17[0m passed; [31m1[0m failed; [33m0[0m skipped; finished in 744.69ms
+
+Running 47 tests for test/foundry/lending/iTokenWithInterest.t.sol:iTokenWithInterestActionsTest
+[32m[PASS][0m testMetadata(string,string) (runs: 256, μ: 9983972, ~: 9979240)
+[32m[PASS][0m test_convertToShares() (gas: 28361)
+[32m[PASS][0m test_deposit() (gas: 140474)
+[32m[PASS][0m test_deposit_DepositWithMinSharesAmountOut() (gas: 140728)
+[32m[PASS][0m test_deposit_RevertIfLessThanMinSharesAmountOut() (gas: 135682)
+[32m[PASS][0m test_deposit_WithMaxAssetAmount() (gas: 148609)
+[32m[PASS][0m test_getLiquidityBalance() (gas: 151999)
+[32m[PASS][0m test_maxDeposit_NoDeposits() (gas: 87220)
+[32m[PASS][0m test_maxDeposit_WithDeposits() (gas: 137643)
+[32m[PASS][0m test_maxMint_NoDeposits() (gas: 90772)
+[32m[PASS][0m test_maxMint_WithDeposits() (gas: 141126)
+[32m[PASS][0m test_maxRedeem_NoWithdrawalLimit() (gas: 148916)
+[32m[PASS][0m test_maxRedeem_WithWithdrawalLimit() (gas: 169360)
+[32m[PASS][0m test_maxWithdraw_NoWithdrawalLimit() (gas: 148994)
+[32m[PASS][0m test_maxWithdraw_WithWithdrawalLimit() (gas: 168415)
+[32m[PASS][0m test_minDeposit() (gas: 28103)
+[32m[PASS][0m test_mint() (gas: 144052)
+[32m[PASS][0m test_mint_RevertIfMaxAssetsIsSurpassed() (gas: 139266)
+[32m[PASS][0m test_mint_WithMaxAssetAmount() (gas: 148500)
+[32m[PASS][0m test_mint_WithMaxAssets() (gas: 138351)
+[32m[PASS][0m test_rebalance() (gas: 219603)
+[32m[PASS][0m test_rebalance_EmitLogRebalance() (gas: 189508)
+[32m[PASS][0m test_rebalance_RevertIfMsgValueSent() (gas: 25816)
+[32m[PASS][0m test_rebalance_RevertIfNotAuthorized() (gas: 18584)
+[32m[PASS][0m test_redeem() (gas: 147991)
+[32m[PASS][0m test_redeemWithSignatureNative() (gas: 194354)
+[32m[PASS][0m test_redeemWithSignature_RevertIfOwner() (gas: 19678)
+[32m[PASS][0m test_redeemWithSignature_RevertWhenSharesAmountDontMeetMinAmountOut() (gas: 151389)
+[32m[PASS][0m test_redeem_RevertIfLessThanMinSharesAmountOut() (gas: 144291)
+[32m[PASS][0m test_redeem_SenderIsNotOwnerCase() (gas: 232509)
+[32m[PASS][0m test_redeem_WithMaxAssetAmount() (gas: 147340)
+[32m[PASS][0m test_redeem_WithMinSharesAmountOut() (gas: 145824)
+[32m[PASS][0m test_updateRates_CaseWhenRewardsEnded() (gas: 4380832)
+[32m[PASS][0m test_updateRates_RevertIfNewLiquidityExchangePriceSmallerThanOld() (gas: 3855308)
+[32m[PASS][0m test_updateRebalancer_AsAuthorized() (gas: 53021)
+[32m[PASS][0m test_updateRebalancer_EmitLogUpdateRebalancer() (gas: 26042)
+[32m[PASS][0m test_updateRebalancer_RevertIfNotAuthorized() (gas: 19247)
+[32m[PASS][0m test_updateRewards() (gas: 528155)
+[32m[PASS][0m test_updateRewards_RevertUnauthorized() (gas: 460287)
+[32m[PASS][0m test_withdraw() (gas: 141527)
+[32m[PASS][0m test_withdrawWithSignature() (gas: 191554)
+[32m[PASS][0m test_withdrawWithSignature_RevertIfMaxSharesBurnIsSurpassed() (gas: 184447)
+[32m[PASS][0m test_withdrawWithSignature_RevertIfOwner() (gas: 19701)
+[32m[PASS][0m test_withdraw_RevertIfMaxSharesBurnIsSurpassed() (gas: 138470)
+[32m[PASS][0m test_withdraw_SenderIsNotOwnerCase() (gas: 221712)
+[32m[PASS][0m test_withdraw_WithMaxAssetAmount() (gas: 144518)
+[32m[PASS][0m test_withdraw_WithMaxSharesBurn() (gas: 142939)
+Test result: [32mok[0m. [32m47[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 1.33s
+
+Running 5 tests for test/foundry/steth/steth.t.sol:StETHQueueTest
+[32m[PASS][0m test_isClaimable_False() (gas: 209)
+[32m[PASS][0m test_isClaimable_True() (gas: 143)
+[32m[PASS][0m test_liquidityCallback_RevertUnexpectedLiquidityCallback() (gas: 210)
+[32m[PASS][0m test_onERC721Received() (gas: 187)
+[32m[PASS][0m test_onERC721Received_RevertInvalidERC721Transfer() (gas: 209)
+Test result: [32mok[0m. [32m5[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 2.04s
+
+Running 1 test for test/foundry/oracle/fallbackCLRSOracle.t.sol:FallbackCLRS_Chainlink2Hops_OracleTest
+[32m[PASS][0m testGetExchangeRate() (gas: 49052)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 1.36s
+
+Running 12 tests for test/foundry/steth/steth.t.sol:StETHQueueTestQueue
+[32m[PASS][0m test_queue_LogQueue() (gas: 164)
+[32m[PASS][0m test_queue_MultipleNFTs() (gas: 939850)
+[32m[PASS][0m test_queue_OneNFT() (gas: 317043)
+[32m[PASS][0m test_queue_RevertAddressZeroBorrowTo() (gas: 166)
+[32m[PASS][0m test_queue_RevertAddressZeroClaimTo() (gas: 186)
+[32m[PASS][0m test_queue_RevertBorrowAmountRawRoundingZero() (gas: 187)
+[32m[PASS][0m test_queue_RevertInputAmountZeroETH() (gas: 189)
+[32m[PASS][0m test_queue_RevertInputAmountZeroStETH() (gas: 210)
+[32m[PASS][0m test_queue_RevertLidoQueueFails() (gas: 187)
+[32m[PASS][0m test_queue_RevertMaxLTV() (gas: 165)
+[32m[PASS][0m test_queue_RevertStETHInsufficientBalance() (gas: 187)
+[32m[PASS][0m test_queue_RevertStETHNotApproved() (gas: 210)
+Test result: [32mok[0m. [32m12[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 2.07s
+
+Running 1 test for test/foundry/oracle/fallbackCLRSOracle.t.sol:FallbackCLRS_Chainlink3Hops_OracleTest
+[32m[PASS][0m testGetExchangeRate() (gas: 68457)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 3.01ms
+
+Running 12 tests for test/foundry/steth/steth.t.sol:StETHQueueTestAdmin
+[32m[PASS][0m test_isAuth_Auth() (gas: 209)
+[32m[PASS][0m test_isAuth_NotAuth() (gas: 187)
+[32m[PASS][0m test_isAuth_Owner() (gas: 187)
+[32m[PASS][0m test_setAuth() (gas: 210)
+[32m[PASS][0m test_setAuth_LogSetAuth() (gas: 165)
+[32m[PASS][0m test_setAuth_RevertAddressZero() (gas: 208)
+[32m[PASS][0m test_setAuth_RevertOnlyOwner() (gas: 210)
+[32m[PASS][0m test_setMaxLTV() (gas: 188)
+[32m[PASS][0m test_setMaxLTV_LogSetMaxLTV() (gas: 165)
+[32m[PASS][0m test_setMaxLTV_RevertMaxLTVHundredPercent() (gas: 188)
+[32m[PASS][0m test_setMaxLTV_RevertMaxLTVZero() (gas: 166)
+[32m[PASS][0m test_setMaxLTV_RevertUnauthorized() (gas: 209)
+Test result: [32mok[0m. [32m12[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 19.02ms
+
+Running 1 test for test/foundry/vaultT1/factory/vaultFactory.t.sol:VaultFactoryTest
+[32m[PASS][0m testDeployNewVault() (gas: 4995235)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 22.96ms
+
+Running 1 test for test/foundry/steth/steth.t.sol:StETHQueueTestConstructor
+[32m[PASS][0m test_StETHQueue() (gas: 10986)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 16.26ms
+
+Running 2 tests for test/foundry/lending/iTokenPermit2Deposits.t.sol:iTokenPermit2DepositsEIP2612RevertsTest
+[32m[PASS][0m test_depositWithSignatureEIP2612_Revert() (gas: 21043)
+[32m[PASS][0m test_mintWithSignatureEIP2612_Revert() (gas: 21130)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 25.50ms
+
+Running 53 tests for test/foundry/vaultT1/vault/vault.t.sol:VaultT1Test
+[32m[PASS][0m testAbsorbAndUseAbsorbDustDebtNegative() (gas: 1092354)
+[32m[PASS][0m testAbsorbAndUseAbsorbDustDebtPositive() (gas: 1437992)
+[32m[PASS][0m testAbsorbBranchNegative() (gas: 970422)
+[32m[PASS][0m testAbsorbBranchPositive() (gas: 970046)
+[32m[PASS][0m testAbsorbBranchWhileBranchAsNextTopTickNegative() (gas: 992164)
+[32m[PASS][0m testAbsorbBranchWhileBranchAsNextTopTickPositive() (gas: 1337776)
+[32m[PASS][0m testAbsorbMultipleBranchesNegative() (gas: 970422)
+[32m[PASS][0m testAbsorbMultipleBranchesPositive() (gas: 970067)
+[32m[PASS][0m testAbsorbMultiplePerfectTickAndBranchesNegative() (gas: 1357219)
+[32m[PASS][0m testAbsorbMultiplePerfectTickAndBranchesPositive() (gas: 1357788)
+[32m[PASS][0m testAbsorbMultiplePerfectTickOneNegative() (gas: 1128897)
+[32m[PASS][0m testAbsorbMultiplePerfectTickOnePositive() (gas: 1474479)
+[32m[PASS][0m testAbsorbMultiplePerfectTickTwoNegative() (gas: 1076553)
+[32m[PASS][0m testAbsorbMultiplePerfectTickTwoPositive() (gas: 1076903)
+[32m[PASS][0m testAbsorbTickWhileBranchAsNextTopTickNegative() (gas: 910294)
+[32m[PASS][0m testAbsorbTickWhileBranchAsNextTopTickPositive() (gas: 1255653)
+[32m[PASS][0m testChangeInExchangePrice() (gas: 594458)
+[32m[PASS][0m testDeployNewVault() (gas: 4978294)
+[32m[PASS][0m testDepositAndBorrowZero() (gas: 315750)
+[32m[PASS][0m testDepositAndPaybackFromAnyAddress() (gas: 871243)
+[32m[PASS][0m testInteractFromDifferentVaultNFT() (gas: 339111)
+[32m[PASS][0m testLiquidateFromBranchNegative() (gas: 574124)
+[32m[PASS][0m testLiquidateFromBranchPositive() (gas: 574863)
+[32m[PASS][0m testLiquidateFromSinglePerfectTickTillLiquidationThresholdNegative() (gas: 511670)
+[32m[PASS][0m testLiquidateFromSinglePerfectTickTillLiquidationThresholdPositive() (gas: 511946)
+[32m[PASS][0m testLiquidateInitializeAndUnitializeNegative(bool) (runs: 256, μ: 946440, ~: 946440)
+[32m[PASS][0m testLiquidateInitializeAndUnitializePositive(bool) (runs: 256, μ: 1270246, ~: 1270246)
+[32m[PASS][0m testLiquidateNonNativeNegative() (gas: 381629)
+[32m[PASS][0m testLiquidateNonNativePositive() (gas: 381704)
+[32m[PASS][0m testLiquidateSingleFromPerfectTickTillBetweenNegative() (gas: 513088)
+[32m[PASS][0m testLiquidateSingleFromPerfectTickTillBetweenPositive() (gas: 513481)
+[32m[PASS][0m testMultiplePerfectTickLiquidationNegative() (gas: 707734)
+[32m[PASS][0m testMultiplePerfectTickLiquidationPositive() (gas: 708018)
+[32m[PASS][0m testNativeLiquidate() (gas: 395405)
+[32m[PASS][0m testNativeOperate() (gas: 1331481)
+[32m[PASS][0m testOperateETHOnANonNativeVaultNegative() (gas: 391581)
+[32m[PASS][0m testOperateETHOnANonNativeVaultPositive() (gas: 391742)
+[32m[PASS][0m testPaybackMoreThanBorrowed() (gas: 461110)
+[32m[PASS][0m testPerfectTickAndBranchLiquidationNegative() (gas: 983753)
+[32m[PASS][0m testPerfectTickAndBranchLiquidationPositive() (gas: 984180)
+[32m[PASS][0m testPerfectTickAndMultipleBranchesLiquidationNegative() (gas: 1059438)
+[32m[PASS][0m testPerfectTickAndMultipleBranchesLiquidationPositive() (gas: 1060422)
+[32m[PASS][0m testRebalance() (gas: 707896)
+[32m[PASS][0m testRebalanceNative() (gas: 1115670)
+[32m[PASS][0m testTickBranchTickBranchLiquidationNegative() (gas: 1458676)
+[32m[PASS][0m testTickBranchTickBranchLiquidationPositive() (gas: 1459246)
+[32m[PASS][0m testTransferNFTOwnershipAndInteractWithNewOwner() (gas: 846241)
+[32m[PASS][0m testTransferNFTOwnershipAndInteractWithOldOwner() (gas: 336211)
+[32m[PASS][0m testUnitializeFirstPositionNegative() (gas: 190)
+[32m[PASS][0m testUnitializeFirstPositionPositive() (gas: 1210034)
+[32m[PASS][0m testWithdrawAndBorrowFromAnyAddress() (gas: 338458)
+[32m[PASS][0m testWithdrawAndPaybackMax() (gas: 516428)
+[32m[PASS][0m testWithdrawMoreThanSupplied() (gas: 462006)
+Test result: [32mok[0m. [32m53[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 2.90s
+
+Running 5 tests for test/foundry/steth/steth.t.sol:StETHQueueTestClaim
+[32m[PASS][0m testFuzz_claim_MultipleNFTs(uint256) (runs: 256, μ: 810501, ~: 735312)
+[32m[PASS][0m test_claim_LogClaim() (gas: 187)
+[32m[PASS][0m test_claim_OneNFT() (gas: 385560)
+[32m[PASS][0m test_claim_RevertNoClaimQueued() (gas: 165)
+[32m[PASS][0m test_claim_WithYield() (gas: 419414)
+Test result: [32mok[0m. [32m5[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 3.56s
+
+Running 8 tests for test/foundry/lending/lendingFactory.t.sol:LendingFactoryTest
+[32m[PASS][0m test_iTokenTypes() (gas: 9770736)
+[32m[PASS][0m test_setAuth() (gas: 34836)
+[32m[PASS][0m test_setAuth_RevertIfNotAdmin() (gas: 13244)
+[32m[PASS][0m test_setAuth_RevertIfNotValidAddress() (gas: 13604)
+[32m[PASS][0m test_setDeployer() (gas: 34829)
+[32m[PASS][0m test_setDeployer_RevertIfNotAdmin() (gas: 13274)
+[32m[PASS][0m test_setDeployer_RevertIfNotValidAddress() (gas: 13613)
+[32m[PASS][0m test_setITokenCreationCode() (gas: 10298149)
+Test result: [32mok[0m. [32m8[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 5.90s
+
+Running 8 tests for test/foundry/lending/iTokenNative.t.sol:iTokenNativePermit2Test
+[32m[PASS][0m test_SetUpState() (gas: 35231)
+[32m[PASS][0m test_depositWithSignature() (gas: 191655)
+[32m[PASS][0m test_depositWithSignature_RevertIfMinAmountOut() (gas: 191430)
+[32m[PASS][0m test_liquidityCallback_RevertIfIsNotPermit2() (gas: 577721)
+[32m[PASS][0m test_liquidityCallback_RevertIfSenderIsNotAssetContract() (gas: 12088)
+[32m[PASS][0m test_liquidityCallback_RevertIfSenderIsNotLiquidityContract() (gas: 14159)
+[32m[PASS][0m test_mintWithSignature() (gas: 195290)
+[32m[PASS][0m test_mintWithSignature_RevertIfMaxAssetsIsSurpassed() (gas: 59456)
+Test result: [32mok[0m. [32m8[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 4.40s
+
+Running 8 tests for test/foundry/lending/iTokenPermit2Deposits.t.sol:iTokenPermit2DepositsTest
+[32m[PASS][0m test_SetUpState() (gas: 35231)
+[32m[PASS][0m test_depositWithSignature() (gas: 191655)
+[32m[PASS][0m test_depositWithSignature_RevertIfMinAmountOut() (gas: 191430)
+[32m[PASS][0m test_liquidityCallback_RevertIfIsNotPermit2() (gas: 577721)
+[32m[PASS][0m test_liquidityCallback_RevertIfSenderIsNotAssetContract() (gas: 12088)
+[32m[PASS][0m test_liquidityCallback_RevertIfSenderIsNotLiquidityContract() (gas: 14159)
+[32m[PASS][0m test_mintWithSignature() (gas: 195290)
+[32m[PASS][0m test_mintWithSignature_RevertIfMaxAssetsIsSurpassed() (gas: 59456)
+Test result: [32mok[0m. [32m8[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 4.30s
+
+Running 1 test for test/foundry/oracle/uniV3TWAP3Chainlink1Oracle.t.sol:UniV3CheckFallbackCLRSOracleTest
+[32m[PASS][0m testGetExchangeRate() (gas: 130260)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 4.20ms
+
+Running 1 test for test/foundry/periphery/resolvers/lendingResolver.t.sol:LendingResolverEIP2612Test
+[32m[PASS][0m test_getITokenDetailsTypeEIP2612Deposits() (gas: 92828)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 6.74s
+
+Running 17 tests for test/foundry/lending/lendingFactory.t.sol:LendingFactoryCreateTokenTest
+[32m[PASS][0m test_allTokens() (gas: 13660040)
+[32m[PASS][0m test_createToken_AsDeployer() (gas: 4186104)
+[32m[PASS][0m test_createToken_NativeUnderlyingToken() (gas: 9548028)
+[32m[PASS][0m test_createToken_RevertIfAuth() (gas: 45787)
+[32m[PASS][0m test_createToken_RevertIfLiquidityNotConfigured() (gas: 27839)
+[32m[PASS][0m test_createToken_RevertIfTokenAlreadyExists() (gas: 4163112)
+[32m[PASS][0m test_createToken_RevertIfUnauthorized() (gas: 18447)
+[32m[PASS][0m test_createToken_UnsetToken_RevertIfiTokenTypeNotExist() (gas: 18733)
+[32m[PASS][0m test_createToken_iToken() (gas: 4169903)
+[32m[PASS][0m test_iTokenTypes() (gas: 9721509)
+[32m[PASS][0m test_setAuth() (gas: 34888)
+[32m[PASS][0m test_setAuth_RevertIfNotAdmin() (gas: 13243)
+[32m[PASS][0m test_setAuth_RevertIfNotValidAddress() (gas: 13571)
+[32m[PASS][0m test_setDeployer() (gas: 34865)
+[32m[PASS][0m test_setDeployer_RevertIfNotAdmin() (gas: 13296)
+[32m[PASS][0m test_setDeployer_RevertIfNotValidAddress() (gas: 13635)
+[32m[PASS][0m test_setITokenCreationCode() (gas: 10241193)
+Test result: [32mok[0m. [32m17[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 7.08s
+
+Running 14 tests for test/foundry/periphery/resolvers/lendingResolver.t.sol:LendingResolverTest
+[32m[PASS][0m test_computeIToken() (gas: 16153)
+[32m[PASS][0m test_deployment() (gas: 7632)
+[32m[PASS][0m test_getAllITokens() (gas: 16801)
+[32m[PASS][0m test_getAllITokensMultiple() (gas: 4494398)
+[32m[PASS][0m test_getITokenDetails() (gas: 275286)
+[32m[PASS][0m test_getITokenDetailsTypeNativeUnderlying() (gas: 8937393460516917910)
+[32m[PASS][0m test_getITokenDetailsWithYield() (gas: 211)
+[32m[PASS][0m test_getITokenInternalData() (gas: 169275)
+[32m[PASS][0m test_getITokenRewards() (gas: 48355)
+[32m[PASS][0m test_getITokenRewardsRateModelConfig() (gas: 538792)
+[32m[PASS][0m test_getITokensEntireData() (gas: 9214505025332645831)
+[32m[PASS][0m test_getPreviews() (gas: 185824)
+[32m[PASS][0m test_getUserPosition() (gas: 165340)
+[32m[PASS][0m test_getUserPositions() (gas: 188659)
+Test result: [32mok[0m. [32m14[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 7.05s
+
+Running 1 test for test/foundry/lending/iTokenNative.t.sol:iTokenNativeETHTest
+[32m[PASS][0m test_liquidityCallback_RevertAlways() (gas: 11550)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 3.67s
+
+Running 1 test for test/foundry/lending/iTokenNative.t.sol:iTokenNativeUnderlyingTest
+[32m[PASS][0m test_getLiquiditySlotLinksAsset() (gas: 4154291)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 3.83s
+
+Running 6 tests for test/foundry/lending/iTokenNative.t.sol:iTokenNativeETHEIP2612WithdrawalsTest
+[32m[PASS][0m test_redeemWithSignatureNative() (gas: 197268)
+[32m[PASS][0m test_redeemWithSignatureNative_RevertIfOwner() (gas: 19698)
+[32m[PASS][0m test_redeemWithSignatureNative_RevertWhenSharesAmountDontMeetMinAmountOut() (gas: 153460)
+[32m[PASS][0m test_withdrawWithSignatureNative() (gas: 194482)
+[32m[PASS][0m test_withdrawWithSignatureNative_RevertIfOwner() (gas: 19730)
+[32m[PASS][0m test_withdrawWithSignatureNative_RevertWhenMaxSharesBurnIsSurpassed() (gas: 191628)
+Test result: [32mok[0m. [32m6[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 5.07s
+
+Running 16 tests for test/foundry/lending/iTokenNative.t.sol:iTokenNativeETHActionsTest
+[32m[PASS][0m testConvertToShares() (gas: 28297)
+[32m[PASS][0m test_depositNative() (gas: 147706)
+[32m[PASS][0m test_depositNative_RevertWhenMinAmountOutIsLessThanShares() (gas: 142312)
+[32m[PASS][0m test_depositNative_WithMinAmountOut() (gas: 141437)
+[32m[PASS][0m test_mintNative() (gas: 151374)
+[32m[PASS][0m test_mintNative_RevertIfAssetAmountEqualsNativeMax() (gas: 43495)
+[32m[PASS][0m test_mintNative_RevertWhenUserSendsLessEthersThanAssetAmountArgument() (gas: 44311)
+[32m[PASS][0m test_mintNative_WithMaxAssets() (gas: 145201)
+[32m[PASS][0m test_mintNative_WithMaxAssets_RevertWhenMaxAssetsIsSurpassed() (gas: 146073)
+[32m[PASS][0m test_redeemNative() (gas: 153888)
+[32m[PASS][0m test_redeemNative_RevertIfMinAmountOut() (gas: 151529)
+[32m[PASS][0m test_redeemNative_SenderIsNotOwnerCase() (gas: 234551)
+[32m[PASS][0m test_withdrawNative() (gas: 147195)
+[32m[PASS][0m test_withdrawNative_RevertWhenMaxSharesBurnIsSurpassed() (gas: 148584)
+[32m[PASS][0m test_withdrawNative_SenderIsNotOwnerCase() (gas: 234488)
+[32m[PASS][0m test_withdrawNative_WithMaxSharesBurn() (gas: 147137)
+Test result: [32mok[0m. [32m16[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 7.61s
+
+Running 36 tests for test/foundry/libraries/tickMath/tickMath.t.sol:TickMathTest
+[32m[PASS][0m testFuzz_TickAndRatioConsistency(uint256) (runs: 256, μ: 6271, ~: 6161)
+[32m[PASS][0m testFuzz_getRatioAtTick(int24) (runs: 256, μ: 4005, ~: 3995)
+[32m[PASS][0m testFuzz_getTickAtRatio(uint256) (runs: 256, μ: 4308, ~: 4320)
+[32m[PASS][0m testIncrementalTicks() (gas: 186879)
+[32m[PASS][0m testPrecisionLimits_ForAllTicks() (gas: 180470397)
+[32m[PASS][0m testPrecisionLimits_From_Minus12767_To_Minus2768_Tick() (gas: 88058158)
+[32m[PASS][0m testPrecisionLimits_From_Minus22767_To_Minus12768_Tick() (gas: 89217128)
+[32m[PASS][0m testPrecisionLimits_From_Minus2767_To_Plus7232_Tick() (gas: 86372189)
+[32m[PASS][0m testPrecisionLimits_From_Minus31767_To_Minus22768_Tick() (gas: 81819853)
+[32m[PASS][0m testPrecisionLimits_From_Minus32667_To_Minus31768_Tick() (gas: 8459396)
+[32m[PASS][0m testPrecisionLimits_From_Minus32767_To_Minus32668_Tick() (gas: 980408)
+[32m[PASS][0m testPrecisionLimits_From_Plus17233_To_Plus27232_Tick() (gas: 89652380)
+[32m[PASS][0m testPrecisionLimits_From_Plus27233_To_Max_Tick() (gas: 51137584)
+[32m[PASS][0m testPrecisionLimits_From_Plus7233_To_Plus17232_Tick() (gas: 89159629)
+[32m[PASS][0m testSymmetry(int24) (runs: 256, μ: 5211, ~: 5176)
+[32m[PASS][0m test_MAX_TICK_equalsNegativeMIN_TICK() (gas: 366)
+[32m[PASS][0m test_MIN_TICK_equalsNegativeMAX_TICK() (gas: 407)
+[32m[PASS][0m test_getRatioAtTick_isValidMaxTick() (gas: 984)
+[32m[PASS][0m test_getRatioAtTick_isValidMaxTickSubOne() (gas: 3302)
+[32m[PASS][0m test_getRatioAtTick_isValidMinTick() (gas: 993)
+[32m[PASS][0m test_getRatioAtTick_isValidMinTickAddOne() (gas: 1164)
+[31m[FAIL. Reason: FFI disabled: run again with `--ffi` if you want to allow tests to call external scripts.][0m test_getRatioAtTick_matchesJavaScriptImplByOneHundrethOfABip() (gas: 835040)
+[32m[PASS][0m test_getRatioAtTick_throwsForTooHigh() (gas: 3264)
+[32m[PASS][0m test_getRatioAtTick_throwsForTooLow() (gas: 3245)
+[32m[PASS][0m test_getTickAtRatio_isValidMaxRatioMinusAlmostFifteenPercent() (gas: 1712)
+[32m[PASS][0m test_getTickAtRatio_isValidMaxRatioMinusOne() (gas: 3850)
+[32m[PASS][0m test_getTickAtRatio_isValidMaxRatioMinusZeroPointOnePercent() (gas: 1715)
+[32m[PASS][0m test_getTickAtRatio_isValidMaxRatioMinusZeroPointSixteenPercent() (gas: 1678)
+[32m[PASS][0m test_getTickAtRatio_isValidMaxRatioX96() (gas: 917)
+[32m[PASS][0m test_getTickAtRatio_isValidMinRatioPlusOne() (gas: 1526)
+[32m[PASS][0m test_getTickAtRatio_isValidMinRatioPlusZeroPointFifteenPercent() (gas: 1723)
+[32m[PASS][0m test_getTickAtRatio_isValidMinRatioPlusZeroPointFourteenPercent() (gas: 1627)
+[32m[PASS][0m test_getTickAtRatio_isValidMinRatioX96() (gas: 1475)
+[31m[FAIL. Reason: FFI disabled: run again with `--ffi` if you want to allow tests to call external scripts.][0m test_getTickAtRatio_matchesJavascriptImplWithin1() (gas: 2357402)
+[32m[PASS][0m test_getTickAtRatio_throwsForTooHigh() (gas: 3193)
+[32m[PASS][0m test_getTickAtRatio_throwsForTooLow() (gas: 3215)
+Test result: [31mFAILED[0m. [32m34[0m passed; [31m2[0m failed; [33m0[0m skipped; finished in 6.60s
+
+Running 51 tests for test/foundry/lending/iTokenNative.t.sol:iTokenNativeActionsTest
+[32m[PASS][0m testMaxDeposit() (gas: 211)
+[32m[PASS][0m testMetadata() (gas: 17574)
+[32m[PASS][0m testSupplyYield() (gas: 254)
+[32m[PASS][0m test_convertToShares() (gas: 28340)
+[32m[PASS][0m test_deposit() (gas: 165163)
+[32m[PASS][0m test_deposit_DepositWithMinSharesAmountOut() (gas: 165418)
+[32m[PASS][0m test_deposit_RevertIfLessThanMinSharesAmountOut() (gas: 160428)
+[32m[PASS][0m test_deposit_WithMaxAssetAmount() (gas: 164500)
+[32m[PASS][0m test_getLiquidityBalance() (gas: 176658)
+[32m[PASS][0m test_maxDeposit_NoDeposits() (gas: 40015)
+[32m[PASS][0m test_maxDeposit_WithDeposits() (gas: 162318)
+[32m[PASS][0m test_maxMint_NoDeposits() (gas: 43614)
+[32m[PASS][0m test_maxMint_WithDeposits() (gas: 165826)
+[32m[PASS][0m test_maxRedeem_NoWithdrawalLimit() (gas: 173751)
+[32m[PASS][0m test_maxRedeem_WithWithdrawalLimit() (gas: 193751)
+[32m[PASS][0m test_maxWithdraw_NoWithdrawalLimit() (gas: 173697)
+[32m[PASS][0m test_maxWithdraw_WithWithdrawalLimit() (gas: 192806)
+[32m[PASS][0m test_minDeposit() (gas: 28104)
+[32m[PASS][0m test_mint() (gas: 168787)
+[32m[PASS][0m test_mint_RevertIfMaxAssetsIsSurpassed() (gas: 164012)
+[32m[PASS][0m test_mint_WithMaxAssetAmount() (gas: 160908)
+[32m[PASS][0m test_mint_WithMaxAssets() (gas: 163097)
+[32m[PASS][0m test_rebalance() (gas: 242502)
+[32m[PASS][0m test_rebalance_EmitLogRebalance() (gas: 218773)
+[32m[PASS][0m test_rebalance_NativeOverfundMsgValue() (gas: 249669)
+[32m[PASS][0m test_rebalance_NativeUnderfundMsgValue() (gas: 242715)
+[32m[PASS][0m test_rebalance_RevertIfMsgValueSent() (gas: 233)
+[32m[PASS][0m test_rebalance_RevertIfNotAuthorized() (gas: 18609)
+[32m[PASS][0m test_redeem() (gas: 211634)
+[32m[PASS][0m test_redeemWithSignatureNative() (gas: 258012)
+[32m[PASS][0m test_redeemWithSignature_RevertIfOwner() (gas: 19722)
+[32m[PASS][0m test_redeemWithSignature_RevertWhenSharesAmountDontMeetMinAmountOut() (gas: 176200)
+[32m[PASS][0m test_redeem_RevertIfLessThanMinSharesAmountOut() (gas: 207926)
+[32m[PASS][0m test_redeem_SenderIsNotOwnerCase() (gas: 319474)
+[32m[PASS][0m test_redeem_WithMaxAssetAmount() (gas: 210948)
+[32m[PASS][0m test_redeem_WithMinSharesAmountOut() (gas: 209565)
+[32m[PASS][0m test_updateRates_CaseWhenRewardsEnded() (gas: 4380897)
+[32m[PASS][0m test_updateRates_RevertIfNewLiquidityExchangePriceSmallerThanOld() (gas: 3855286)
+[32m[PASS][0m test_updateRebalancer_AsAuthorized() (gas: 52984)
+[32m[PASS][0m test_updateRebalancer_EmitLogUpdateRebalancer() (gas: 26026)
+[32m[PASS][0m test_updateRebalancer_RevertIfNotAuthorized() (gas: 19253)
+[32m[PASS][0m test_updateRewards() (gas: 528185)
+[32m[PASS][0m test_updateRewards_RevertUnauthorized() (gas: 460337)
+[32m[PASS][0m test_withdraw() (gas: 205149)
+[32m[PASS][0m test_withdrawWithSignature() (gas: 255176)
+[32m[PASS][0m test_withdrawWithSignature_RevertIfMaxSharesBurnIsSurpassed() (gas: 248078)
+[32m[PASS][0m test_withdrawWithSignature_RevertIfOwner() (gas: 19712)
+[32m[PASS][0m test_withdraw_RevertIfMaxSharesBurnIsSurpassed() (gas: 202103)
+[32m[PASS][0m test_withdraw_SenderIsNotOwnerCase() (gas: 310850)
+[32m[PASS][0m test_withdraw_WithMaxAssetAmount() (gas: 208141)
+[32m[PASS][0m test_withdraw_WithMaxSharesBurn() (gas: 206678)
+Test result: [32mok[0m. [32m51[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 8.51s
+| AccessControlledOffchainAggregator contract |                 |      |        |      |         |
+|---------------------------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost                             | Deployment Size |      |        |      |         |
+| 0                                           | 0               |      |        |      |         |
+| Function Name                               | min             | avg  | median | max  | # calls |
+| decimals                                    | 298             | 298  | 298    | 298  | 2       |
+| latestRoundData                             | 7410            | 7446 | 7410   | 7502 | 5       |
+
+
+| AppProxyUpgradeable contract |                 |       |        |       |         |
+|------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost              | Deployment Size |       |        |       |         |
+| 0                            | 0               |       |        |       |         |
+| Function Name                | min             | avg   | median | max   | # calls |
+| allowance                    | 22812           | 22812 | 22812  | 22812 | 1       |
+| approve                      | 26042           | 27092 | 27092  | 28142 | 2       |
+| transfer                     | 51067           | 51067 | 51067  | 51067 | 1       |
+
+
+| EACAggregatorProxy contract |                 |       |        |       |         |
+|-----------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost             | Deployment Size |       |        |       |         |
+| 0                           | 0               |       |        |       |         |
+| Function Name               | min             | avg   | median | max   | # calls |
+| decimals                    | 5640            | 5640  | 5640   | 5640  | 2       |
+| latestRoundData             | 15643           | 15679 | 15643  | 15735 | 5       |
+
+
+| Kernel contract |                 |      |        |      |         |
+|-----------------|-----------------|------|--------|------|---------|
+| Deployment Cost | Deployment Size |      |        |      |         |
+| 0               | 0               |      |        |      |         |
+| Function Name   | min             | avg  | median | max  | # calls |
+| getApp          | 820             | 1320 | 820    | 2820 | 4       |
+
+
+| KernelProxy contract |                 |      |        |      |         |
+|----------------------|-----------------|------|--------|------|---------|
+| Deployment Cost      | Deployment Size |      |        |      |         |
+| 0                    | 0               |      |        |      |         |
+| Function Name        | min             | avg  | median | max  | # calls |
+| getApp               | 1763            | 3388 | 1763   | 8263 | 4       |
+
+
+| Lido contract   |                 |       |        |       |         |
+|-----------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost | Deployment Size |       |        |       |         |
+| 0               | 0               |       |        |       |         |
+| Function Name   | min             | avg   | median | max   | # calls |
+| allowance       | 3926            | 3926  | 3926   | 3926  | 1       |
+| approve         | 22656           | 23706 | 23706  | 24756 | 2       |
+| transfer        | 47681           | 47681 | 47681  | 47681 | 1       |
+
+
+| OssifiableProxy contract    |                 |      |        |      |         |
+|-----------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost             | Deployment Size |      |        |      |         |
+| 0                           | 0               |      |        |      |         |
+| Function Name               | min             | avg  | median | max  | # calls |
+| MAX_STETH_WITHDRAWAL_AMOUNT | 5339            | 5339 | 5339   | 5339 | 1       |
+| MIN_STETH_WITHDRAWAL_AMOUNT | 864             | 864  | 864    | 864  | 1       |
+
+
+| Permit2 contract |                 |       |        |       |         |
+|------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost  | Deployment Size |       |        |       |         |
+| 0                | 0               |       |        |       |         |
+| Function Name    | min             | avg   | median | max   | # calls |
+| DOMAIN_SEPARATOR | 325             | 325   | 325    | 325   | 1       |
+| permit           | 30786           | 30786 | 30786  | 30786 | 1       |
+| transferFrom     | 14757           | 14757 | 14757  | 14757 | 1       |
+
+
+| WETH9 contract  |                 |      |        |      |         |
+|-----------------|-----------------|------|--------|------|---------|
+| Deployment Cost | Deployment Size |      |        |      |         |
+| 0               | 0               |      |        |      |         |
+| Function Name   | min             | avg  | median | max  | # calls |
+| decimals        | 2444            | 2444 | 2444   | 2444 | 1       |
+| name            | 1110            | 2110 | 2110   | 3110 | 2       |
+| symbol          | 3264            | 3264 | 3264   | 3264 | 1       |
+
+
+| WithdrawalQueueERC721 contract |                 |     |        |     |         |
+|--------------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost                | Deployment Size |     |        |     |         |
+| 0                              | 0               |     |        |     |         |
+| Function Name                  | min             | avg | median | max | # calls |
+| MAX_STETH_WITHDRAWAL_AMOUNT    | 262             | 262 | 262    | 262 | 1       |
+| MIN_STETH_WITHDRAWAL_AMOUNT    | 308             | 308 | 308    | 308 | 1       |
+
+
+| contracts/liquidity/adminModule/main.sol:AdminModule contract |                 |       |        |       |         |
+|---------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                               | Deployment Size |       |        |       |         |
+| 4649319                                                       | 23311           |       |        |       |         |
+| Function Name                                                 | min             | avg   | median | max   | # calls |
+| changeStatus                                                  | 25814           | 26864 | 26864  | 27914 | 2       |
+| collectRevenue                                                | 5751            | 22884 | 25873  | 33273 | 5       |
+| pauseUser                                                     | 13486           | 24396 | 22304  | 28478 | 39      |
+| unpauseUser                                                   | 4615            | 5539  | 6001   | 6001  | 3       |
+| updateAuths                                                   | 675             | 25573 | 25790  | 55292 | 29      |
+| updateExchangePrices                                          | 7934            | 7938  | 7934   | 7944  | 87      |
+| updateGuardians                                               | 675             | 23962 | 25790  | 55292 | 10      |
+| updateRateDataV1s                                             | 4877            | 28326 | 29839  | 53166 | 2220    |
+| updateRateDataV2s                                             | 4921            | 24422 | 16680  | 57799 | 40      |
+| updateRevenueCollector                                        | 569             | 16675 | 23834  | 25834 | 9       |
+| updateTokenConfigs                                            | 5752            | 60185 | 77363  | 77363 | 900     |
+| updateUserBorrowConfigs                                       | 10783           | 32021 | 32553  | 45375 | 6308    |
+| updateUserClasses                                             | 30521           | 42502 | 42502  | 54483 | 2       |
+| updateUserSupplyConfigs                                       | 8046            | 29578 | 29802  | 40798 | 6330    |
+
+
+| contracts/liquidity/proxy.sol:Liquidity contract |                 |        |        |        |         |
+|--------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                  | Deployment Size |        |        |        |         |
+| 921492                                           | 5152            |        |        |        |         |
+| Function Name                                    | min             | avg    | median | max    | # calls |
+| addImplementation                                | 41068           | 244522 | 73234  | 416413 | 1352    |
+| changeStatus                                     | 30796           | 31846  | 31846  | 32896  | 2       |
+| collectRevenue                                   | 6221            | 25855  | 29849  | 38243  | 5       |
+| getSigsImplementation                            | 2529            | 2529   | 2529   | 2529   | 2       |
+| operate                                          | 1353            | 49382  | 45948  | 129979 | 1768    |
+| pauseUser                                        | 18498           | 29408  | 27319  | 33493  | 39      |
+| readFromStorage                                  | 391             | 568    | 391    | 2391   | 5924    |
+| receive                                          | 55              | 55     | 55     | 55     | 1       |
+| removeImplementation                             | 14188           | 14188  | 14188  | 14188  | 2       |
+| unpauseUser                                      | 6622            | 7549   | 8013   | 8013   | 3       |
+| updateAuths                                      | 1176            | 27466  | 26288  | 60314  | 29      |
+| updateExchangePrices                             | 8449            | 8522   | 8449   | 10459  | 87      |
+| updateGuardians                                  | 3154            | 25984  | 26266  | 60292  | 10      |
+| updateRateDataV1s                                | 9926            | 28868  | 30355  | 58212  | 2220    |
+| updateRateDataV2s                                | 9972            | 26002  | 21702  | 62847  | 40      |
+| updateRevenueCollector                           | 2417            | 18881  | 24317  | 30817  | 9       |
+| updateTokenConfigs                               | 6256            | 60761  | 77903  | 77903  | 900     |
+| updateUserBorrowConfigs                          | 11311           | 32550  | 33081  | 50403  | 6308    |
+| updateUserClasses                                | 35533           | 47512  | 47512  | 59492  | 2       |
+| updateUserSupplyConfigs                          | 8568            | 30104  | 30324  | 45820  | 6330    |
+
+
+| contracts/liquidity/userModule/main.sol:UserModule contract |                 |       |        |        |         |
+|-------------------------------------------------------------|-----------------|-------|--------|--------|---------|
+| Deployment Cost                                             | Deployment Size |       |        |        |         |
+| 2115927                                                     | 10494           |       |        |        |         |
+| Function Name                                               | min             | avg   | median | max    | # calls |
+| operate                                                     | 850             | 47637 | 42139  | 124973 | 1767    |
+
+
+| contracts/mocks/mockOracle.sol:MockOracle contract |                 |      |        |       |         |
+|----------------------------------------------------|-----------------|------|--------|-------|---------|
+| Deployment Cost                                    | Deployment Size |      |        |       |         |
+| 38893                                              | 225             |      |        |       |         |
+| Function Name                                      | min             | avg  | median | max   | # calls |
+| getExchangeRate                                    | 302             | 524  | 302    | 2302  | 333     |
+| setPrice                                           | 290             | 7641 | 290    | 22290 | 160     |
+
+
+| contracts/mocks/mockProtocol.sol:MockProtocol contract |                 |       |        |        |         |
+|--------------------------------------------------------|-----------------|-------|--------|--------|---------|
+| Deployment Cost                                        | Deployment Size |       |        |        |         |
+| 853183                                                 | 4460            |       |        |        |         |
+| Function Name                                          | min             | avg   | median | max    | # calls |
+| liquidityCallback                                      | 2923            | 25429 | 26526  | 37326  | 626     |
+| operate                                                | 12204           | 62088 | 64535  | 134019 | 1188    |
+| receive                                                | 55              | 55    | 55     | 55     | 1       |
+| setReentrancyFromCallback                              | 22467           | 22467 | 22467  | 22467  | 1       |
+| setTransferExcessMode                                  | 22423           | 22423 | 22423  | 22423  | 6       |
+| setTransferFromAddress                                 | 22454           | 22454 | 22454  | 22454  | 2       |
+| setTransferInsufficientMode                            | 22408           | 22408 | 22408  | 22408  | 8       |
+
+
+| contracts/oracle/oracles/fallbackCLRSOracle.sol:FallbackCLRSOracle contract |                 |       |        |       |         |
+|-----------------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                             | Deployment Size |       |        |       |         |
+| 647731                                                                      | 6060            |       |        |       |         |
+| Function Name                                                               | min             | avg   | median | max   | # calls |
+| getExchangeRate                                                             | 38872           | 38872 | 38872  | 38872 | 1       |
+
+
+| contracts/oracle/oracles/uniV3CheckCLRSOracle.sol:UniV3CheckFallbackCLRSOracle contract |                 |        |        |        |         |
+|-------------------------------------------------------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                                                                 | Deployment Size |        |        |        |         |
+| 1780133                                                                                         | 13472           |        |        |        |         |
+| Function Name                                                                                   | min             | avg    | median | max    | # calls |
+| getExchangeRate                                                                                 | 120080          | 120080 | 120080 | 120080 | 1       |
+
+
+| contracts/periphery/resolvers/lending/main.sol:LendingResolver contract |                 |                     |                     |                     |         |
+|-------------------------------------------------------------------------|-----------------|---------------------|---------------------|---------------------|---------|
+| Deployment Cost                                                         | Deployment Size |                     |                     |                     |         |
+| 2154059                                                                 | 11125           |                     |                     |                     |         |
+| Function Name                                                           | min             | avg                 | median              | max                 | # calls |
+| LENDING_FACTORY                                                         | 248             | 248                 | 248                 | 248                 | 1       |
+| computeIToken                                                           | 5313            | 5313                | 5313                | 5313                | 1       |
+| getAllITokens                                                           | 3270            | 6422                | 6803                | 8814                | 4       |
+| getITokenDetails                                                        | 33235           | 1316357860761167089 | 83267               | 8937393460512429492 | 7       |
+| getITokenInternalData                                                   | 7983            | 20733               | 20733               | 33483               | 2       |
+| getITokenRewards                                                        | 13228           | 25978               | 25978               | 38728               | 2       |
+| getITokenRewardsRateModelConfig                                         | 14607           | 14607               | 14607               | 14607               | 1       |
+| getITokensEntireData                                                    | 49494           | 4468696730254263896 | 4468696730254263896 | 8937393460508478298 | 2       |
+| getPreviews                                                             | 19374           | 29298               | 29298               | 39222               | 2       |
+| getUserPosition                                                         | 8674            | 18674               | 8674                | 38674               | 3       |
+| getUserPositions                                                        | 101602          | 101602              | 101602              | 101602              | 1       |
+
+
+| contracts/periphery/resolvers/liquidity/main.sol:LiquidityResolver contract |                 |       |        |       |         |
+|-----------------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                             | Deployment Size |       |        |       |         |
+| 2178951                                                                     | 11179           |       |        |       |         |
+| Function Name                                                               | min             | avg   | median | max   | # calls |
+| getExchangePricesAndConfig                                                  | 1345            | 1368  | 1345   | 3345  | 257     |
+| getOverallTokenData                                                         | 4875            | 4875  | 4875   | 4875  | 9       |
+| getRateConfig                                                               | 1368            | 1453  | 1368   | 5868  | 152     |
+| getStatus                                                                   | 997             | 3247  | 3247   | 5497  | 2       |
+| getTotalAmounts                                                             | 1345            | 1595  | 1345   | 5845  | 54      |
+| getUserBorrow                                                               | 1581            | 1690  | 1581   | 6081  | 242     |
+| getUserBorrowData                                                           | 7135            | 9852  | 8342   | 17255 | 158     |
+| getUserClass                                                                | 1368            | 2993  | 2368   | 5868  | 4       |
+| getUserSupply                                                               | 1636            | 1765  | 1636   | 6136  | 240     |
+| getUserSupplyData                                                           | 6979            | 10130 | 7996   | 16787 | 184     |
+| isAuth                                                                      | 1346            | 2560  | 1346   | 5846  | 7       |
+| isGuardian                                                                  | 1336            | 2550  | 1336   | 5836  | 7       |
+
+
+| contracts/periphery/resolvers/vault/main.sol:VaultResolver contract |                 |       |        |       |         |
+|---------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                     | Deployment Size |       |        |       |         |
+| 2956606                                                             | 15204           |       |        |       |         |
+| Function Name                                                       | min             | avg   | median | max   | # calls |
+| getVaultEntireData                                                  | 43269           | 62899 | 79269  | 79269 | 68      |
+| positionByNftId                                                     | 51179           | 55951 | 56832  | 58369 | 78      |
+
+
+| contracts/protocols/flashloan/main.sol:FlashLender contract |                 |       |        |        |         |
+|-------------------------------------------------------------|-----------------|-------|--------|--------|---------|
+| Deployment Cost                                             | Deployment Size |       |        |        |         |
+| 1868601                                                     | 9602            |       |        |        |         |
+| Function Name                                               | min             | avg   | median | max    | # calls |
+| flashFee                                                    | 6051            | 6055  | 6055   | 6059   | 2       |
+| flashLoan                                                   | 841             | 54674 | 74435  | 86420  | 6       |
+| flashLoanMultiple                                           | 1147            | 89154 | 75569  | 223520 | 5       |
+| liquidityCallback                                           | 629             | 9717  | 11990  | 11990  | 5       |
+| maxFlashLoan                                                | 9020            | 11936 | 12270  | 13520  | 6       |
+| receive                                                     | 55              | 55    | 55     | 55     | 2       |
+| rescueFunds                                                 | 8620            | 12579 | 12549  | 16600  | 4       |
+
+
+| contracts/protocols/lending/iToken/main.sol:iToken contract |                 |        |        |        |         |
+|-------------------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                             | Deployment Size |        |        |        |         |
+| 3891915                                                     | 22259           |        |        |        |         |
+| Function Name                                               | min             | avg    | median | max    | # calls |
+| DOMAIN_SEPARATOR                                            | 409             | 409    | 409    | 409    | 4       |
+| NATIVE_TOKEN_ADDRESS                                        | 212             | 212    | 212    | 212    | 4       |
+| approve                                                     | 24620           | 24620  | 24620  | 24620  | 2       |
+| asset                                                       | 251             | 251    | 251    | 251    | 15      |
+| balanceOf                                                   | 566             | 726    | 566    | 2566   | 125     |
+| convertToAssets                                             | 2155            | 3499   | 2155   | 22923  | 47      |
+| convertToShares                                             | 2130            | 4818   | 3898   | 22898  | 14      |
+| decimals                                                    | 274             | 274    | 274    | 274    | 31      |
+| deposit(uint256,address)(uint256)                           | 19879           | 100601 | 115219 | 124138 | 57      |
+| deposit(uint256,address,uint256)(uint256)                   | 119767          | 122012 | 122012 | 124258 | 2       |
+| depositWithSignature                                        | 51032           | 107748 | 132575 | 139639 | 6       |
+| depositWithSignatureEIP2612                                 | 4166            | 90458  | 145993 | 149972 | 5       |
+| getData                                                     | 4589            | 18268  | 12365  | 29365  | 50      |
+| liquidityCallback                                           | 736             | 13411  | 16512  | 20008  | 96      |
+| maxDeposit                                                  | 2308            | 2308   | 2308   | 2308   | 2       |
+| maxMint                                                     | 5868            | 5868   | 5868   | 5868   | 2       |
+| maxRedeem                                                   | 6360            | 14397  | 7473   | 29360  | 3       |
+| maxWithdraw                                                 | 6382            | 14419  | 7495   | 29382  | 3       |
+| minDeposit                                                  | 22864           | 22864  | 22864  | 22864  | 1       |
+| mint(uint256,address)(uint256)                              | 23668           | 85167  | 87573  | 127695 | 16      |
+| mint(uint256,address,uint256)(uint256)                      | 127838          | 127842 | 127842 | 127847 | 2       |
+| mintWithSignature                                           | 7641            | 71923  | 71923  | 136206 | 4       |
+| mintWithSignatureEIP2612                                    | 155220          | 156209 | 156209 | 157199 | 2       |
+| name                                                        | 1306            | 2251   | 1603   | 3306   | 13      |
+| previewDeposit                                              | 2191            | 6390   | 3281   | 22959  | 6       |
+| previewMint                                                 | 3946            | 4152   | 4152   | 4359   | 2       |
+| previewRedeem                                               | 3939            | 4282   | 4385   | 4419   | 4       |
+| previewWithdraw                                             | 2158            | 2947   | 2158   | 4339   | 5       |
+| rebalance                                                   | 7612            | 22347  | 22352  | 37073  | 4       |
+| redeem(uint256,address,address)(uint256)                    | 8018            | 28929  | 31176  | 42800  | 11      |
+| redeem(uint256,address,address,uint256)(uint256)            | 31289           | 31293  | 31293  | 31298  | 2       |
+| redeemWithSignature                                         | 6045            | 29314  | 7706   | 74193  | 3       |
+| symbol                                                      | 1304            | 2249   | 1601   | 3304   | 13      |
+| totalAssets                                                 | 2200            | 3374   | 3968   | 4448   | 41      |
+| totalSupply                                                 | 394             | 394    | 394    | 394    | 28      |
+| updateRebalancer                                            | 8195            | 24023  | 24736  | 24736  | 94      |
+| updateRewards                                               | 8119            | 28563  | 28595  | 42395  | 93      |
+| withdraw(uint256,address,address)(uint256)                  | 6147            | 29010  | 27857  | 74071  | 12      |
+| withdraw(uint256,address,address,uint256)(uint256)          | 28210           | 29737  | 29737  | 31264  | 2       |
+| withdrawWithSignature                                       | 6080            | 48851  | 69139  | 71336  | 3       |
+
+
+| contracts/protocols/lending/iToken/nativeUnderlying/iTokenNativeUnderlying.sol:iTokenNativeUnderlying contract |                 |        |        |        |         |
+|----------------------------------------------------------------------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                                                                                | Deployment Size |        |        |        |         |
+| 4230893                                                                                                        | 23919           |        |        |        |         |
+| Function Name                                                                                                  | min             | avg    | median | max    | # calls |
+| DOMAIN_SEPARATOR                                                                                               | 430             | 430    | 430    | 430    | 7       |
+| NATIVE_TOKEN_ADDRESS                                                                                           | 293             | 293    | 293    | 293    | 3       |
+| approve                                                                                                        | 24660           | 24660  | 24660  | 24660  | 4       |
+| asset                                                                                                          | 259             | 259    | 259    | 259    | 4       |
+| balanceOf                                                                                                      | 610             | 902    | 610    | 2610   | 41      |
+| convertToAssets                                                                                                | 2132            | 2132   | 2132   | 2132   | 3       |
+| convertToShares                                                                                                | 2108            | 10415  | 2108   | 22877  | 5       |
+| decimals                                                                                                       | 273             | 273    | 273    | 273    | 9       |
+| deposit(uint256,address)(uint256)                                                                              | 76633           | 141099 | 148883 | 148883 | 23      |
+| deposit(uint256,address,uint256)(uint256)                                                                      | 144513          | 146758 | 146758 | 149004 | 2       |
+| depositNative(address)(uint256)                                                                                | 52026           | 112102 | 124118 | 124118 | 12      |
+| depositNative(address,uint256)(uint256)                                                                        | 124239          | 124242 | 124242 | 124246 | 2       |
+| getData                                                                                                        | 4545            | 13025  | 6338   | 29322  | 15      |
+| liquidityCallback                                                                                              | 669             | 669    | 669    | 669    | 1       |
+| maxDeposit                                                                                                     | 2329            | 3329   | 3329   | 4329   | 2       |
+| maxMint                                                                                                        | 5914            | 6914   | 6914   | 7914   | 2       |
+| maxRedeem                                                                                                      | 6405            | 14172  | 6708   | 29405  | 3       |
+| maxWithdraw                                                                                                    | 6361            | 14128  | 6664   | 29361  | 3       |
+| minDeposit                                                                                                     | 22865           | 22865  | 22865  | 22865  | 1       |
+| mint(uint256,address)(uint256)                                                                                 | 79533           | 140816 | 150508 | 152508 | 8       |
+| mint(uint256,address,uint256)(uint256)                                                                         | 152584          | 152588 | 152588 | 152593 | 2       |
+| mintNative(uint256,address)(uint256)                                                                           | 26070           | 87100  | 127735 | 127735 | 5       |
+| mintNative(uint256,address,uint256)(uint256)                                                                   | 127898          | 127902 | 127902 | 127907 | 2       |
+| name                                                                                                           | 1283            | 1683   | 1283   | 3283   | 5       |
+| rebalance                                                                                                      | 7570            | 30787  | 34830  | 41885  | 5       |
+| receive                                                                                                        | 55              | 55     | 55     | 55     | 48      |
+| redeem(uint256,address,address)(uint256)                                                                       | 58909           | 59763  | 59058  | 61324  | 3       |
+| redeem(uint256,address,address,uint256)(uint256)                                                               | 59154           | 59158  | 59158  | 59163  | 2       |
+| redeemNative(uint256,address,address)(uint256)                                                                 | 32862           | 32862  | 32862  | 32862  | 1       |
+| redeemNative(uint256,address,address,uint256)(uint256)                                                         | 33065           | 34276  | 34276  | 35488  | 2       |
+| redeemWithSignature                                                                                            | 6089            | 38656  | 7751   | 102128 | 3       |
+| redeemWithSignatureNative                                                                                      | 6089            | 29961  | 7751   | 76044  | 3       |
+| symbol                                                                                                         | 1348            | 1748   | 1348   | 3348   | 5       |
+| totalAssets                                                                                                    | 2222            | 3851   | 3999   | 4222   | 9       |
+| totalSupply                                                                                                    | 350             | 350    | 350    | 350    | 3       |
+| updateRebalancer                                                                                               | 8201            | 23618  | 24742  | 24742  | 82      |
+| updateRewards                                                                                                  | 8191            | 28425  | 28667  | 30523  | 77      |
+| withdraw(uint256,address,address)(uint256)                                                                     | 56065           | 57885  | 58480  | 59112  | 3       |
+| withdraw(uint256,address,address,uint256)(uint256)                                                             | 56127           | 57654  | 57654  | 59182  | 2       |
+| withdrawNative(uint256,address,address)(uint256)                                                               | 29948           | 29948  | 29948  | 29948  | 1       |
+| withdrawNative(uint256,address,address,uint256)(uint256)                                                       | 33073           | 33883  | 33082  | 35496  | 3       |
+| withdrawWithSignature                                                                                          | 6091            | 67454  | 97037  | 99235  | 3       |
+| withdrawWithSignatureNative                                                                                    | 6111            | 50083  | 70970  | 73168  | 3       |
+
+
+| contracts/protocols/lending/lendingFactory/main.sol:LendingFactory contract |                 |         |         |         |         |
+|-----------------------------------------------------------------------------|-----------------|---------|---------|---------|---------|
+| Deployment Cost                                                             | Deployment Size |         |         |         |         |
+| 1687853                                                                     | 8795            |         |         |         |         |
+| Function Name                                                               | min             | avg     | median  | max     | # calls |
+| allTokens                                                                   | 994             | 2344    | 1369    | 4994    | 10      |
+| computeToken                                                                | 1579            | 1579    | 1579    | 1579    | 2       |
+| createToken                                                                 | 2594            | 4165673 | 4128533 | 4481399 | 198     |
+| iTokenCreationCode                                                          | 58504           | 58504   | 58504   | 58504   | 2       |
+| iTokenTypes                                                                 | 646             | 1856    | 1857    | 3065    | 6       |
+| isAuth(address)(bool)                                                       | 575             | 657     | 575     | 4767    | 157     |
+| isAuth(address)(uint256)                                                    | 575             | 716     | 575     | 4767    | 195     |
+| isDeployer                                                                  | 729             | 729     | 729     | 729     | 4       |
+| setAuth                                                                     | 1857            | 20696   | 24311   | 26311   | 32      |
+| setDeployer                                                                 | 1892            | 10392   | 2676    | 26354   | 9       |
+| setITokenCreationCode                                                       | 4950            | 2004358 | 7098    | 4992590 | 568     |
+
+
+| contracts/protocols/lending/lendingRewardsRateModel/main.sol:LendingRewardsRateModel contract |                 |      |        |      |         |
+|-----------------------------------------------------------------------------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost                                                                               | Deployment Size |      |        |      |         |
+| 406422                                                                                        | 3971            |      |        |      |         |
+| Function Name                                                                                 | min             | avg  | median | max  | # calls |
+| getConfig                                                                                     | 1322            | 1322 | 1322   | 1322 | 3       |
+| getRate                                                                                       | 367             | 653  | 699    | 751  | 51      |
+
+
+| contracts/protocols/steth/main.sol:StETHQueue contract |                 |        |        |        |         |
+|--------------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                        | Deployment Size |        |        |        |         |
+| 2318023                                                | 12565           |        |        |        |         |
+| Function Name                                          | min             | avg    | median | max    | # calls |
+| claim                                                  | 47117           | 60423  | 48291  | 85863  | 3       |
+| claims                                                 | 754             | 754    | 754    | 754    | 8       |
+| constantsView                                          | 265             | 265    | 265    | 265    | 1       |
+| initialize                                             | 99179           | 99179  | 99179  | 99179  | 35      |
+| maxLTV                                                 | 2412            | 2412   | 2412   | 2412   | 1       |
+| queue                                                  | 281378          | 460043 | 291893 | 892538 | 5       |
+| receive                                                | 55              | 55     | 55     | 55     | 5       |
+| setMaxLTV                                              | 2012            | 2012   | 2012   | 2012   | 35      |
+
+
+| contracts/protocols/vault/factory/deploymentLogics/vaultT1Logic.sol:VaultT1DeploymentLogic contract |                 |        |        |        |         |
+|-----------------------------------------------------------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                                                                     | Deployment Size |        |        |        |         |
+| 5614919                                                                                             | 27988           |        |        |        |         |
+| Function Name                                                                                       | min             | avg    | median | max    | # calls |
+| vaultT1                                                                                             | 131045          | 131410 | 131631 | 139131 | 214     |
+
+
+| contracts/protocols/vault/factory/main.sol:VaultFactory contract |                 |         |         |         |         |
+|------------------------------------------------------------------|-----------------|---------|---------|---------|---------|
+| Deployment Cost                                                  | Deployment Size |         |         |         |         |
+| 2259203                                                          | 11691           |         |         |         |         |
+| Function Name                                                    | min             | avg     | median  | max     | # calls |
+| deployVault                                                      | 4776805         | 4782840 | 4777391 | 4819791 | 214     |
+| getVaultAddress                                                  | 626             | 626     | 626     | 626     | 294     |
+| isGlobalAuth                                                     | 643             | 664     | 643     | 2643    | 656     |
+| mint                                                             | 28002           | 48495   | 28002   | 71802   | 109     |
+| ownerOf                                                          | 554             | 554     | 554     | 554     | 90      |
+| readFromStorage                                                  | 436             | 436     | 436     | 436     | 78      |
+| setDeployer                                                      | 24320           | 24320   | 24320   | 24320   | 54      |
+| setGlobalAuth                                                    | 24387           | 24387   | 24387   | 24387   | 54      |
+| setVaultDeploymentLogic                                          | 24388           | 24388   | 24388   | 24388   | 54      |
+| totalVaults                                                      | 360             | 360     | 360     | 360     | 214     |
+| transferFrom                                                     | 39736           | 39736   | 39736   | 39736   | 2       |
+
+
+| contracts/protocols/vault/vaultT1/adminModule/main.sol:VaultT1Admin contract |                 |       |        |       |         |
+|------------------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                              | Deployment Size |       |        |       |         |
+| 2101235                                                                      | 10626           |       |        |       |         |
+| Function Name                                                                | min             | avg   | median | max   | # calls |
+| absorbDustDebt                                                               | 16502           | 16536 | 16536  | 16570 | 2       |
+| updateBorrowRateMagnifier                                                    | 6615            | 6615  | 6615   | 6615  | 6       |
+| updateCoreSettings                                                           | 31230           | 31230 | 31230  | 31230 | 214     |
+| updateOracle                                                                 | 6735            | 6735  | 6735   | 6735  | 214     |
+| updateRebalancer                                                             | 28622           | 28622 | 28622  | 28622 | 214     |
+| updateSupplyRateMagnifier                                                    | 9382            | 9382  | 9382   | 9382  | 6       |
+
+
+| contracts/protocols/vault/vaultT1/coreModule/main2.sol:VaultT1Secondary contract |                 |        |        |        |         |
+|----------------------------------------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                                                  | Deployment Size |        |        |        |         |
+| 1732261                                                                          | 8706            |        |        |        |         |
+| Function Name                                                                    | min             | avg    | median | max    | # calls |
+| absorb                                                                           | 36792           | 183554 | 91789  | 513879 | 16      |
+| rebalance                                                                        | 34601           | 48487  | 52921  | 53507  | 4       |
+
+
+| lib/solmate/src/test/utils/mocks/MockERC20.sol:MockERC20 contract |                 |       |        |       |         |
+|-------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                   | Deployment Size |       |        |       |         |
+| 759913                                                            | 4914            |       |        |       |         |
+| Function Name                                                     | min             | avg   | median | max   | # calls |
+| allowance                                                         | 757             | 757   | 757    | 757   | 5       |
+| approve                                                           | 24522           | 24522 | 24522  | 24522 | 9       |
+| balanceOf                                                         | 530             | 530   | 530    | 530   | 73      |
+| decimals                                                          | 249             | 249   | 249    | 249   | 18      |
+| mint                                                              | 2839            | 34693 | 46639  | 46639 | 11      |
+| transfer                                                          | 2343            | 15052 | 18263  | 22828 | 9       |
+| transferFrom                                                      | 779             | 11126 | 6609   | 25509 | 14      |
+
+
+| lib/solmate/src/test/utils/mocks/MockERC4626.sol:MockERC4626 contract |                 |       |        |       |         |
+|-----------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                       | Deployment Size |       |        |       |         |
+| 1477550                                                               | 8302            |       |        |       |         |
+| Function Name                                                         | min             | avg   | median | max   | # calls |
+| afterDepositHookCalledCounter                                         | 394             | 394   | 394    | 394   | 3       |
+| asset                                                                 | 294             | 294   | 294    | 294   | 2       |
+| balanceOf                                                             | 585             | 620   | 585    | 2585  | 56      |
+| convertToAssets                                                       | 503             | 1269  | 1525   | 1525  | 24      |
+| convertToShares                                                       | 1504            | 1504  | 1504   | 1504  | 2       |
+| decimals                                                              | 250             | 250   | 250    | 250   | 1       |
+| deposit                                                               | 2716            | 40676 | 32369  | 77636 | 9       |
+| mint                                                                  | 8206            | 43178 | 34003  | 96960 | 6       |
+| name                                                                  | 1532            | 2099  | 1532   | 3235  | 3       |
+| previewDeposit                                                        | 1565            | 1565  | 1565   | 1565  | 3       |
+| previewWithdraw                                                       | 1531            | 1531  | 1531   | 1531  | 3       |
+| redeem                                                                | 2861            | 28314 | 27279  | 52116 | 7       |
+| symbol                                                                | 1531            | 2098  | 1531   | 3234  | 3       |
+| totalAssets                                                           | 1124            | 1124  | 1124   | 1124  | 16      |
+| totalSupply                                                           | 374             | 374   | 374    | 374   | 14      |
+| withdraw                                                              | 5030            | 25278 | 25722  | 41648 | 8       |
+
+
+| test/foundry/flashloan/mocks/ReceiverMock.sol:ReceiverMock contract |                 |      |        |      |         |
+|---------------------------------------------------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost                                                     | Deployment Size |      |        |      |         |
+| 215457                                                              | 1108            |      |        |      |         |
+| Function Name                                                       | min             | avg  | median | max  | # calls |
+| onFlashLoan                                                         | 735             | 3081 | 735    | 7774 | 3       |
+| onFlashLoanMultiple                                                 | 7891            | 7891 | 7891   | 7891 | 1       |
+| receive                                                             | 55              | 55   | 55     | 55   | 2       |
+
+
+| test/foundry/flashloan/mocks/ReceiverWithInvalidValueMock.sol:ReceiverWithInvalidValueMock contract |                 |     |        |     |         |
+|-----------------------------------------------------------------------------------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost                                                                                     | Deployment Size |     |        |     |         |
+| 133977                                                                                              | 701             |     |        |     |         |
+| Function Name                                                                                       | min             | avg | median | max | # calls |
+| onFlashLoan                                                                                         | 697             | 697 | 697    | 697 | 1       |
+| onFlashLoanMultiple                                                                                 | 834             | 834 | 834    | 834 | 1       |
+
+
+| test/foundry/lending/erc4626.t.sol:ERC4626iTokenTest contract |                 |       |        |       |         |
+|---------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                               | Deployment Size |       |        |       |         |
+| 34654929                                                      | 173452          |       |        |       |         |
+| Function Name                                                 | min             | avg   | median | max   | # calls |
+| invariantMetadata                                             | 29495           | 29495 | 29495  | 29495 | 2       |
+
+
+| test/foundry/lending/harness/iTokenHarness.sol:iTokenHarness contract |                 |       |        |       |         |
+|-----------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                       | Deployment Size |       |        |       |         |
+| 3807316                                                               | 21746           |       |        |       |         |
+| Function Name                                                         | min             | avg   | median | max   | # calls |
+| exposed_lastUpdateTimestamp                                           | 397             | 397   | 397    | 397   | 6       |
+| exposed_liquidityExchangePrice                                        | 373             | 373   | 373    | 373   | 6       |
+| exposed_rewardsActive                                                 | 447             | 447   | 447    | 447   | 4       |
+| exposed_tokenExchangePrice                                            | 399             | 399   | 399    | 399   | 6       |
+| exposed_updateRates                                                   | 568             | 4044  | 4702   | 6862  | 6       |
+| updateRewards                                                         | 29228           | 29228 | 29228  | 29228 | 2       |
+
+
+| test/foundry/lending/helper/solmate-ERC4626.t.sol:ERC4626Test contract |                 |       |        |       |         |
+|------------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                        | Deployment Size |       |        |       |         |
+| 9805794                                                                | 48802           |       |        |       |         |
+| Function Name                                                          | min             | avg   | median | max   | # calls |
+| invariantMetadata                                                      | 15280           | 15280 | 15280  | 15280 | 1       |
+
+
+| test/foundry/lending/iTokenNative.t.sol:iTokenNativeUnderlyingExposed contract |                 |     |        |     |         |
+|--------------------------------------------------------------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost                                                                | Deployment Size |     |        |     |         |
+| 4107154                                                                        | 23289           |     |        |     |         |
+| Function Name                                                                  | min             | avg | median | max | # calls |
+| exposed_getLiquiditySlotLinksAsset                                             | 446             | 446 | 446    | 446 | 1       |
+
+
+| test/foundry/lending/mocks/rewardsMock.sol:LendingRewardsRateMockModel contract |                 |       |        |       |         |
+|---------------------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                                 | Deployment Size |       |        |       |         |
+| 159602                                                                          | 829             |       |        |       |         |
+| Function Name                                                                   | min             | avg   | median | max   | # calls |
+| getRate                                                                         | 632             | 2920  | 632    | 6632  | 353     |
+| setRate                                                                         | 4171            | 22094 | 22313  | 22313 | 166     |
+
+
+| test/foundry/lending/mocks/userModuleMock.sol:UserModuleMock contract |                 |       |        |       |         |
+|-----------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                       | Deployment Size |       |        |       |         |
+| 369692                                                                | 1772            |       |        |       |         |
+| Function Name                                                         | min             | avg   | median | max   | # calls |
+| operate                                                               | 13740           | 13740 | 13740  | 13740 | 2       |
+
+
+| test/foundry/lending/variables.t.sol:VariablesExposed contract |                 |      |        |      |         |
+|----------------------------------------------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost                                                | Deployment Size |      |        |      |         |
+| 1482802                                                        | 9363            |      |        |      |         |
+| Function Name                                                  | min             | avg  | median | max  | # calls |
+| name                                                           | 3243            | 3243 | 3243   | 3243 | 1       |
+| symbol                                                         | 3264            | 3264 | 3264   | 3264 | 1       |
+
+
+| test/foundry/libraries/bigMath/bigMathTestHelper.sol:BigMathTestHelper contract |                 |      |        |      |         |
+|---------------------------------------------------------------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost                                                                 | Deployment Size |      |        |      |         |
+| 565400                                                                          | 2856            |      |        |      |         |
+| Function Name                                                                   | min             | avg  | median | max  | # calls |
+| decompileBigNumber                                                              | 383             | 383  | 383    | 383  | 16      |
+| divBigNumber                                                                    | 1083            | 1109 | 1123   | 1123 | 3       |
+| fromBigNumber(uint256,uint256)(uint256)                                         | 351             | 351  | 351    | 351  | 18      |
+| fromBigNumber(uint256,uint256,uint256)(uint256)                                 | 348             | 348  | 348    | 348  | 18      |
+| mostSignificantBit                                                              | 617             | 691  | 685    | 767  | 266     |
+| mulBigNumber                                                                    | 1586            | 1586 | 1586   | 1586 | 1       |
+| mulDivBigNumber                                                                 | 639             | 1316 | 1512   | 1621 | 12      |
+| mulDivNormal                                                                    | 598             | 598  | 598    | 598  | 2       |
+| toBigNumber                                                                     | 866             | 1057 | 1054   | 1130 | 38      |
+| toBigNumberPure                                                                 | 917             | 917  | 917    | 917  | 1       |
+
+
+| test/foundry/libraries/bigMath/bigMathTolerance.sol:BigMathTolerance contract |                 |      |        |      |         |
+|-------------------------------------------------------------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost                                                               | Deployment Size |      |        |      |         |
+| 744004                                                                        | 3774            |      |        |      |         |
+| Function Name                                                                 | min             | avg  | median | max  | # calls |
+| estimateRoundingErrorViaConversion                                            | 1089            | 1126 | 1130   | 1157 | 8       |
+
+
+| test/foundry/libraries/bigMath/bigMathVaultTestHelper.sol:BigMathVaultTestHelper contract |                 |     |        |     |         |
+|-------------------------------------------------------------------------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost                                                                           | Deployment Size |     |        |     |         |
+| 227269                                                                                    | 1167            |     |        |     |         |
+| Function Name                                                                             | min             | avg | median | max | # calls |
+| divBigNumber                                                                              | 350             | 512 | 530    | 540 | 9       |
+| mulBigNumber                                                                              | 547             | 570 | 576    | 576 | 10      |
+| mulDivBigNumber                                                                           | 796             | 806 | 810    | 814 | 7       |
+| mulDivNormal                                                                              | 456             | 515 | 527    | 527 | 6       |
+
+
+| test/foundry/libraries/liquidityCalcs/liquidityCalcsTestHelper.sol:LiquidityCalcsTestHelper contract |                 |     |        |     |         |
+|------------------------------------------------------------------------------------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost                                                                                      | Deployment Size |     |        |     |         |
+| 431068                                                                                               | 2185            |     |        |     |         |
+| Function Name                                                                                        | min             | avg | median | max | # calls |
+| calcBorrowLimitAfterOperate                                                                          | 556             | 630 | 638    | 646 | 8       |
+| calcBorrowLimitBeforeOperate                                                                         | 532             | 858 | 941    | 943 | 10      |
+| calcExchangePrices                                                                                   | 972             | 972 | 972    | 972 | 2       |
+| calcRateV1                                                                                           | 694             | 694 | 694    | 694 | 1       |
+| calcRateV2                                                                                           | 698             | 698 | 698    | 698 | 1       |
+| calcWithdrawalLimitAfterOperate                                                                      | 479             | 521 | 531    | 542 | 11      |
+| calcWithdrawalLimitBeforeOperate                                                                     | 469             | 660 | 764    | 768 | 14      |
+
+
+| test/foundry/testERC20.sol:TestERC20 contract |                 |       |        |       |         |
+|-----------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                               | Deployment Size |       |        |       |         |
+| 868012                                        | 5058            |       |        |       |         |
+| Function Name                                 | min             | avg   | median | max   | # calls |
+| DOMAIN_SEPARATOR                              | 214             | 214   | 214    | 214   | 2       |
+| approve(address,uint256)                      | 4704            | 24509 | 24604  | 24604 | 211     |
+| approve(address,uint256)(bool)                | 4704            | 24575 | 24604  | 24604 | 4202    |
+| balanceOf                                     | 584             | 1178  | 584    | 2584  | 313     |
+| decimals                                      | 222             | 222   | 222    | 222   | 164     |
+| mint                                          | 24829           | 35779 | 35779  | 46729 | 1350    |
+| name                                          | 1198            | 1963  | 1495   | 3198  | 6       |
+| symbol                                        | 1538            | 2673  | 3241   | 3241  | 3       |
+| totalSupply                                   | 349             | 349   | 349    | 349   | 1916    |
+| transfer                                      | 3057            | 7699  | 7857   | 29757 | 96      |
+| transferFrom(address,address,uint256)         | 3765            | 16515 | 19515  | 23665 | 34      |
+| transferFrom(address,address,uint256)(bool)   | 3765            | 15343 | 15365  | 23665 | 120     |
+
+
+| test/foundry/testERC20Dec6.sol:TestERC20Dec6 contract |                 |       |        |       |         |
+|-------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                       | Deployment Size |       |        |       |         |
+| 868012                                                | 5058            |       |        |       |         |
+| Function Name                                         | min             | avg   | median | max   | # calls |
+| DOMAIN_SEPARATOR                                      | 214             | 214   | 214    | 214   | 6       |
+| allowance                                             | 756             | 1470  | 756    | 2756  | 14      |
+| approve(address,uint256)                              | 2604            | 24041 | 24604  | 24604 | 216     |
+| approve(address,uint256)(bool)                        | 2604            | 23228 | 24604  | 24604 | 5227    |
+| balanceOf                                             | 584             | 1401  | 584    | 2584  | 1700    |
+| burn                                                  | 4622            | 6542  | 6542   | 8462  | 4       |
+| decimals                                              | 222             | 222   | 222    | 222   | 269     |
+| mint                                                  | 2344            | 29049 | 24829  | 46729 | 1854    |
+| name                                                  | 1198            | 1272  | 1198   | 3198  | 214     |
+| permit                                                | 213             | 213   | 213    | 213   | 2       |
+| symbol                                                | 1241            | 1421  | 1241   | 3241  | 111     |
+| totalSupply                                           | 349             | 350   | 349    | 2349  | 2326    |
+| transfer                                              | 2446            | 6594  | 3057   | 29757 | 281     |
+| transferFrom(address,address,uint256)                 | 3765            | 15391 | 15365  | 23665 | 41      |
+| transferFrom(address,address,uint256)(bool)           | 3036            | 19437 | 23665  | 32465 | 683     |
+
+
+| test/foundry/utils/mocks/MockERC20.sol:MockERC20 contract |                 |      |        |      |         |
+|-----------------------------------------------------------|-----------------|------|--------|------|---------|
+| Deployment Cost                                           | Deployment Size |      |        |      |         |
+| 770300                                                    | 4569            |      |        |      |         |
+| Function Name                                             | min             | avg  | median | max  | # calls |
+| decimals                                                  | 222             | 222  | 222    | 222  | 6       |
+| name                                                      | 1198            | 1198 | 1198   | 1198 | 4       |
+| symbol                                                    | 1241            | 1241 | 1241   | 1241 | 2       |
+
+
+| test/foundry/utils/mocks/MockERC20Permit.sol:MockERC20Permit contract |                 |       |        |       |         |
+|-----------------------------------------------------------------------|-----------------|-------|--------|-------|---------|
+| Deployment Cost                                                       | Deployment Size |       |        |       |         |
+| 1157692                                                               | 6741            |       |        |       |         |
+| Function Name                                                         | min             | avg   | median | max   | # calls |
+| DOMAIN_SEPARATOR                                                      | 352             | 352   | 352    | 352   | 6       |
+| approve                                                               | 24604           | 24604 | 24604  | 24604 | 48      |
+| balanceOf                                                             | 539             | 1480  | 539    | 2539  | 34      |
+| decimals                                                              | 200             | 200   | 200    | 200   | 8       |
+| mint                                                                  | 24829           | 32129 | 24829  | 46729 | 24      |
+| name                                                                  | 1198            | 1198  | 1198   | 1198  | 16      |
+| permit                                                                | 34214           | 34214 | 34214  | 34214 | 5       |
+| symbol                                                                | 1241            | 1241  | 1241   | 1241  | 8       |
+| totalSupply                                                           | 349             | 349   | 349    | 349   | 16      |
+| transferFrom                                                          | 9021            | 18107 | 23387  | 23387 | 13      |
+
+
+
+ 
+Ran 108 test suites: [32m868[0m tests passed, [31m3[0m failed, [33m0[0m skipped (871 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/foundry/lending/erc4626.t.sol:ERC4626iTokenTest
+[31m[FAIL. Reason: Assertion failed.][0m testMultipleMintDepositRedeemWithdraw_WithActiveRewards() (gas: 1405825)
+
+Encountered 2 failing tests in test/foundry/libraries/tickMath/tickMath.t.sol:TickMathTest
+[31m[FAIL. Reason: FFI disabled: run again with `--ffi` if you want to allow tests to call external scripts.][0m test_getRatioAtTick_matchesJavaScriptImplByOneHundrethOfABip() (gas: 835040)
+[31m[FAIL. Reason: FFI disabled: run again with `--ffi` if you want to allow tests to call external scripts.][0m test_getTickAtRatio_matchesJavascriptImplWithin1() (gas: 2357402)
+
+Encountered a total of [31m3[0m failing tests, [32m868[0m tests succeeded
