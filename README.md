@@ -13,7 +13,7 @@ ___
 ### Q: If you are integrating tokens, are you allowing only whitelisted tokens to work with the codebase or any complying with the standard? Are they assumed to have certain properties, e.g. be non-reentrant? Are there any types of [weird tokens](https://github.com/d-xo/weird-erc20) you want to integrate?
 The initial launch will be permissioned, with token and pool listings restricted to the team. Only standard ERC-20 tokens are intended to be integrated, and no “weird” tokens are planned. The codebase assumes tokens fully comply with the ERC-20 standard. Supported token decimals are between 6 and 18; further, the DEX contracts explicitly disallow tokens with 15, 16, or 17 decimals.
 
-After we make things permissionless, any tokens can be permissionlessly supported on DEX v2 as long as they abide by the limitations on the codebase. However, the use of these tokens will be limited to the specific pool and will not affect the other pools.
+After we make things permissionless, any tokens can be permissionlessly supported on DEX V2 as long as they abide by the limitations on the codebase. However, the use of these tokens will be limited to the specific pool and will not affect the other pools.
 ___
 
 ### Q: Are there any limitations on values set by admins (or other roles) in the codebase, including restrictions on array lengths?
@@ -33,7 +33,7 @@ ___
 ___
 
 ### Q: Are there any off-chain mechanisms involved in the protocol (e.g., keeper bots, arbitrage bots, etc.)? We assume these mechanisms will not misbehave, delay, or go offline unless otherwise specified.
-The rebalance function (which is needed if the addOrRemoveTokens function is used by an auth) is an offchain mechanism in the DexV2 contracts. This mechanism is intended purely as a gas optimization, and the protocol can function without it being every used. We can assume that it won't misbehave, delay, or go offline unless otherwise specified. 
+The rebalance function is an offchain mechanism in the DexV2 contracts. We can assume that it won't misbehave, delay, or go offline unless otherwise specified.
 
 Revenue (protocol fee and interest revenue) tracking will also happen off-chain. 
 
@@ -59,10 +59,10 @@ Additional constraints have been introduced across various protocol flows (e.g.,
 The rebalance function may fail under specific conditions if one of the amounts passed to the Liquidity Layer’s operate function is below the required minimum. This is an accepted limitation and does not affect core protocol functionality.
 
 5. Rounding during liquidation
-In the Money Market contracts, during liquidation, there are cases where a portion of the amount intended to be received by the liquidator may be skipped if it is less than one cent. This is a deliberate rounding decision.
+In the Money Market contracts, during liquidation, there are cases where a portion of the amount intended to be received by the liquidator may be skipped if it is small. This is a deliberate rounding decision.
 
 6. Unsupported token decimals in Dex contracts
-Tokens with 15, 16, or 17 decimals are intentionally not supported in the Dex contracts due to internal precision and arithmetic constraints.
+Tokens with 15, 16, or 17 decimals are intentionally not supported in the Dex contracts
 
 7. Protocol fee and interest revenue accounting in Dex contracts
 The Dex contracts do not currently account for, or provide an on chain mechanism to collect, accrued protocol fees. This is a deliberate design choice made to reduce the gas cost of swaps. Additionally, in certain cases, eg interest accrued on LP fees that have not yet been collected, or interest on stored balances held by the DEX, is revenue to the protocol. This interest revenue is also not explicitly accounted for on-chain. Both protocol fees and interest related revenues can be calculated retrospectively using historical on-chain data and off-chain accounting mechanisms if required.
@@ -76,10 +76,17 @@ The sqrtPriceX96 value is stored using the BigMath library, with only the most s
 10. Reduced-precision storage of global fee growth
 The global fee growth variables are stored using the BigMath library, retaining only the most significant 74 bits. In extreme edge cases where this value becomes very large, incremental swap fees may not affect these most significant bits, potentially resulting in LPs missing the accrued swap fees. This scenario is highly unlikely and considered acceptable.
 
-11.
+11. Conservative fee updates during tick crossingDuring swaps, when a tick is crossed, the associated tick fee variables are updated conservatively to account for the fact that global fee variables are rounded down when stored. This approach prioritizes protocol safety but may result in LPs earning slightly lower fees under certain conditions.
 
-11. User favorable rounding in isolated code paths
+12. User favorable rounding in isolated code paths
 There are isolated instances in the codebase where rounding may be skipped or applied in favor of the user within specific code paths. Despite this, the protocol’s overall explicit and conservative rounding approach ensures that it remains net profitable.
+
+13. Precision loss between global and per user accounting
+Due to the use of BigMath, there are parts of the codebase where precision loss and rounding can cause discrepancies between global accounting values (aggregated across all users) and the sum of per user accounting. Since global values are larger in magnitude, they would lose proportionally more precision. In extreme edge cases, this could result in scenarios where, if all users attempt to withdraw simultaneously, a small residual amount becomes temporarily stuck because the global accounting reaches zero before all per user balances are fully settled. This scenario is unlikely. If it were to occur, the team would intervene by creating an internal position to allow affected users to withdraw their funds without loss.
+
+14. Interest accrual assumptions during DEX rebalancing
+Some interest earning tokens may remain in the DEX if rebalancing is not performed frequently. In such cases, these tokens may temporarily not earn interest, even though the accounting and mathematical models assume that they do. The protocol assumes that rebalancing will be performed frequently enough such that only a small portion of tokens remain unproductive at any given time. Any resulting shortfall in interest is expected and will be borne by the protocol through off-chain accounting and operational mechanisms.
+
 ___
 
 ### Q: Please provide links to previous audits (if any) and all the known issues or acceptable risks.
@@ -91,6 +98,9 @@ The Money Market contracts currently do not include any mechanism to absorb bad 
 
 3. No bad debt socialization mechanism
 The Money Market contracts also do not include any functionality to socialize bad debt across users or the protocol.
+
+4. Small amount liquidation edge cases
+In certain edge cases, if the withdrawal amount or the payback amount during liquidations is very small, the operation may fail due to the protocol’s security checks. The team is aware that this behavior can, in rare situations, result in residual bad debt.
 ___
 
 ### Q: Please list any relevant protocol resources.
