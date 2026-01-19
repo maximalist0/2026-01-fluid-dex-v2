@@ -7,13 +7,13 @@
 # Q&A
 
 ### Q: On what chains are the smart contracts going to be deployed?
-Initially, the smart contracts will be deployed on Ethereum. Subsequently, deployment will expand to other EVM compatible chains where Fluid is live (currently on Plasma, Arbitrum, Base, and Polygon).
+Ethereum, Plasma, Arbitrum, Base, and Polygon. The code requires cancun and transient storage supported before deployment.
 ___
 
 ### Q: If you are integrating tokens, are you allowing only whitelisted tokens to work with the codebase or any complying with the standard? Are they assumed to have certain properties, e.g. be non-reentrant? Are there any types of [weird tokens](https://github.com/d-xo/weird-erc20) you want to integrate?
 The initial launch will be permissioned, with token and pool listings restricted to the team. Only standard ERC-20 tokens are intended to be integrated, and no “weird” tokens are planned. The codebase assumes tokens fully comply with the ERC-20 standard. Supported token decimals are between 6 and 18; further, the DEX contracts explicitly disallow tokens with 15, 16, or 17 decimals.
 
-After we make things permissionless, any tokens can be permissionlessly supported on DEX V2 as long as they abide by the limitations on the codebase. However, the use of these tokens will be limited to the specific pool and will not affect the other pools.
+After we make things permissionless, any tokens can be permissionlessly supported on DEX V2 as long as they abide by the limitations on the codebase (refers only to D3 pools (smart collateral), while D4 pools (smart debt) will remain permissioned). However, the use of these tokens will be limited to the specific pool and will not affect the other pools. It's expected that contracts will work with standard tokens only (without weird traits and excluding tokens with 15, 16 and 17 decimals), and using weird tokens leading to issues is considered an acceptable risk. But, if a malicious actor can create a pool with a malicious token and harm other pools, then it can be a valid issue.
 ___
 
 ### Q: Are there any limitations on values set by admins (or other roles) in the codebase, including restrictions on array lengths?
@@ -30,6 +30,8 @@ ___
 3. The FluidMoneyMarketProxy contract complies with ERC1967Proxy. The intent is to make the Money Market upgradeable.
 4. The FluidMoneyMarket contract is the implementation which the FluidMoneyMarketProxy will point to, and hence has functions like upgradeTo and upgradeToAndCall in the FluidMoneyMarketAdminModuleImplementation.
 5. The FluidMoneyMarket contract also acts as the NFT manager, and it complies with the ERC721 standard, and the contract ERC721 is based on the ERC721 Solmate implementation.
+
+EIP violations can be considered valid only if they qualify for Medium and High severity definitions.
 ___
 
 ### Q: Are there any off-chain mechanisms involved in the protocol (e.g., keeper bots, arbitrage bots, etc.)? We assume these mechanisms will not misbehave, delay, or go offline unless otherwise specified.
@@ -110,6 +112,12 @@ The Money Market contracts also do not include any functionality to close underc
 
 5. Small amount liquidation edge cases
 In certain edge cases, if the withdrawal amount or the payback amount during liquidations is very small, the operation may fail due to the protocol’s security checks. The team is aware that this behavior can, in rare situations, result in residual bad debt.
+
+In general, if bad debt happens and the protocol cannot handle, or socialise bad debt, that's an acceptable risk and a known issue.
+
+6. A token’s liquidity can be split between the DEX and the liquidity layer. As a result, certain operations, such as withdrawals or liquidations, may fail even when sufficient total liquidity exists, if the required liquidity is not available on the specific side needed to execute the transaction. This is a known and acceptable design risk. The rebalance function is expected to manage and mitigate this risk through regular rebalancing and should be considered trusted. Issues arising from this behaviour are therefore not considered valid findings.
+
+7. All lending protocols inherently carry the risk of high utilization, which can lead to situations where withdrawals are temporarily unavailable and liquidations may become stuck. The protocol’s risk management framework is assumed to be trusted in handling such scenarios, and issues arising from these conditions are considered known and acceptable and will not be treated as valid findings
 ___
 
 ### Q: Please list any relevant protocol resources.
